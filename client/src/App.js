@@ -6,6 +6,7 @@ import Inventory from './pages/inventory/inventory';
 import Order from './pages/order/order';
 import SingleProduct from './pages/products/single_product';
 import LogIn from   './pages/log_in';
+import Form from './pages/form/form'
 import BasicNavbar from './components/navbar'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Outlet } from 'react-router';
@@ -25,6 +26,7 @@ function App() {
         >
             <Route path='/' element= { <Landing />} />
             <Route path='/product' element= { <Product />} />
+            <Route path='/form' element={<Form />} />
             <Route path='/inventory' element= { <Inventory />} />
             <Route path='/order' element= { <Order />} />
         </Route>
