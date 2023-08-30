@@ -1,6 +1,6 @@
 const express = require('express')
 
-const OrderSchema = require('../models/orders')
+const OrderSchema = require('../models/order')
 
 const router = express();
 

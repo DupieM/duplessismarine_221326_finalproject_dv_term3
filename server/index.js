@@ -4,7 +4,7 @@ const mongoose = require('mongoose');
 const { log } = require('console');
 const cupRoute = require('./routes/cups')
 const clientRoute = require('./routes/clients')
-const orderRoute = require('./routes/orders')
+const orderRoute = require('./routes/order')
 
 require('dotenv/config')
 

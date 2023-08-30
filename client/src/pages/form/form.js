@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 
-import axios from 'axios'
+import axios from 'axios';
 import { Link } from 'react-router-dom';
 
 function Form() {
@@ -18,14 +18,14 @@ function Form() {
 
   const addProduct = (e) => {
     let payload = { name: productName, price: productPrice, stock: productStock, category: productCategory }
-    axios.post('http://localhost:5000/api/cup', payload)
+    axios.post('http://localhost:5000/api/cups', payload)
       .then()
       .catch()
 
   }
 
   useEffect(() => {
-    axios.get('http://localhost:5000/api/cup/')
+    axios.get('http://localhost:5000/api/cups/')
       .then((res) => {
         setProducts(res.data)
       })
