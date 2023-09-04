@@ -29,6 +29,7 @@ function App() {
             <Route path='/form' element={<Form />} />
             <Route path='/inventory' element= { <Inventory />} />
             <Route path='/order' element= { <Order />} />
+            <Route path='/single_product' element= { <SingleProduct />} />
         </Route>
       </Routes>
     </div>

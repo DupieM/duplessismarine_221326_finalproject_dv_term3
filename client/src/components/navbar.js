@@ -11,15 +11,14 @@ function BasicNavbar() {
     return (
         <Navbar variant="dark" style={{backgroundColor: '#055E6C', padding: '0'}}>
             <Container style={{textAlign: 'left'}}>
-                <Navbar.Brand href="/"><img src={icon3} style={{width: '10%'}}/></Navbar.Brand>
-                <Nav>
+                <Navbar.Brand href="/"><img src={icon3} style={{width: '17%',marginRight: "-50px"}}/></Navbar.Brand>
+                <Nav style={{marginRight: "360px"}}>
                     <Nav.Link href="/product" style={{fontSize: '17pt', color: '#CABCB1', fontWeight: 'bold'}}>Product</Nav.Link>
                     <Nav.Link href="/inventory" style={{fontSize: '17pt', color: '#CABCB1', fontWeight: 'bold'}}>Inventory</Nav.Link>
                     <Nav.Link href="/order" style={{fontSize: '17pt', color: '#CABCB1', fontWeight: 'bold'}}>Orders</Nav.Link>
-                    {/* <Nav.Link href="/single_product" style={{fontSize: '17pt', color: '#CABCB1', fontWeight: 'bold'}}>Single Product</Nav.Link> */}
                 </Nav>
-                <Navbar.Brand href="/"><img src={icon} style={{width: '50%'}}/></Navbar.Brand>
-                <Navbar.Brand href="/login"><img src={icon2} style={{width: '50%'}}/></Navbar.Brand>
+                <Navbar.Brand href="/" style={{marginRight: "140px"}}><img src={icon} style={{width: '120%'}}/></Navbar.Brand>
+                <Navbar.Brand href="/login"><img src={icon2} style={{width: '120%'}}/></Navbar.Brand>
             </Container>
         </Navbar>
     )
