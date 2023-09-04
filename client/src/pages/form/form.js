@@ -5,32 +5,33 @@ import { Link } from 'react-router-dom';
 
 function Form() {
 
-  const [productName, setProductName] = useState();
+  const [productMake, setProductMake] = useState();
+  const [productModel, setProductModel] = useState();
   const [productPrice, setProductPrice] = useState();
-  const [productStock, setProductStock] = useState();
-  const [productCategory, setProductCategory] = useState();
-
-  const [products, setProducts] = useState([]);
+  const [productQuantity, setProductQuantity] = useState();
+  const [productCapacity, setProductCapacity] = useState();
+  const [productProducode, setProductProducode] = useState();
+  const [productImg, setProductImg] = useState();
+  const [productColorimg1, setProductColorimg1] = useState();
+  const [productColorimg2, setProductColorimg2] = useState();
+  const [productColorimg3, setProductColorimg3] = useState();
+  const [productColorimg4, setProductColorimg4] = useState();
+  const [productDescription, setProductDescription] = useState();
+  const [productCareinstructions, setProductCareinstructions] = useState();
 
   const style = {
     margin: "10px",
   }
 
   const addProduct = (e) => {
-    let payload = { name: productName, price: productPrice, stock: productStock, category: productCategory }
-    axios.post('http://localhost:5000/api/cups', payload)
+    let payload = { make: productMake, model: productModel, price: productPrice, quantity: productQuantity, 
+    capacity: productCapacity, product_code: productProducode, img: productImg, color_img1: productColorimg1, color_img2: productColorimg2, 
+    color_img3: productColorimg3, color_img4: productColorimg4, description: productDescription, care_instructions: productCareinstructions}
+    axios.post('http://localhost:5000/api/cup', payload)
       .then()
       .catch()
 
   }
-
-  useEffect(() => {
-    axios.get('http://localhost:5000/api/cups/')
-      .then((res) => {
-        setProducts(res.data)
-      })
-      .catch()
-  })
 
 const handleDelete=(id)=>{
   axios.delete('http://localhost:5000/api/cup/'+id)
@@ -45,8 +46,13 @@ const handleDelete=(id)=>{
           <div >
             <input style={style}
               type="text"
-              placeholder="Product Name"
-              onChange={(e => setProductName(e.target.value))}
+              placeholder="Make"
+              onChange={(e => setProductMake(e.target.value))}
+            />
+            <input style={style}
+              type="text"
+              placeholder="Model"
+              onChange={(e => setProductModel(e.target.value))}
             />
             <input style={style}
               type="number"
@@ -55,46 +61,58 @@ const handleDelete=(id)=>{
             />
             <input style={style}
               type="number"
-              placeholder="Stock"
-              onChange={(e => setProductStock(e.target.value))}
+              placeholder="Quantity"
+              onChange={(e => setProductQuantity(e.target.value))}
+            />
+            <input style={style}
+                type="number"
+                placeholder="Capacity"
+                onChange={(e => setProductCapacity(e.target.value))}
             />
             <input style={style}
               type="text"
-              placeholder="Category"
-              onChange={(e => setProductCategory(e.target.value))}
+              placeholder="Product Code"
+              onChange={(e => setProductProducode(e.target.value))}
+            />
+            <input style={style}
+              type="url"
+              placeholder="Image link"
+              onChange={(e => setProductImg(e.target.value))}
+            />
+            <input style={style}
+              type="text"
+              placeholder="Color 1"
+              onChange={(e => setProductColorimg1(e.target.value))}
+            />
+            <input style={style}
+              type="text"
+              placeholder="Color 2"
+              onChange={(e => setProductColorimg2(e.target.value))}
+            />
+            <input style={style}
+              type="text"
+              placeholder="Color 3"
+              onChange={(e => setProductColorimg3(e.target.value))}
+            />
+            <input style={style}
+              type="text"
+              placeholder="Color 4"
+              onChange={(e => setProductColorimg4(e.target.value))}
+            />
+            <input style={style}
+              type="text"
+              placeholder="Description"
+              onChange={(e => setProductDescription(e.target.value))}
+            />
+            <input style={style}
+              type="text"
+              placeholder="Care Instructions"
+              onChange={(e => setProductCareinstructions(e.target.value))}
             />
             <button type='submit' style={style}>Add Product</button>
-            <button style={style}>Update Product</button>
-            <button style={style}>Delete Product</button>
           </div>
         </div>
       </form>
-
-      <div>
-        <table class="table mx-auto">
-          <tbody>
-            <th>Product Name</th>
-            <th>Price</th>
-            <th>Stock</th>
-            <th>Category</th>
-            {products.map(product => {
-              return (
-                <tr>
-                  <td id='name'>{product.name}</td>
-                  <td id='price'>{product.price}</td>
-                  <td id='stock'>{product.stock}</td>
-                  <td id='category'>{product.category}</td>
-                  {/* <td><a class="btn btn-primary" role="button">Update</a></td>   */} <Link to={`/update/${product._id}`} className="btn btn-sm btn-success me-2">Update</Link>
-                  <td><a class="btn btn-danger" onClick={()=>handleDelete(product._id)} role="button">Delete</a></td>
-                </tr>
-              )
-            })}
-
-          </tbody>
-
-        </table>
-      </div>
-
     </div>
   );
 }

@@ -1,180 +1,21 @@
-import React from "react";
+import React, { useEffect, useState } from 'react';
 import {Container, Row, Col} from "react-bootstrap";
 import PropductCard from "./product_card";
 import Accordion from 'react-bootstrap/Accordion';
+import axios from 'axios';
+import { Card } from "react-bootstrap"
 
 function Product() {
 
-    const Products = [
-        {
-            id: 1,
-            productname: 'Product 1',
-            productimg: 'https://i.pinimg.com/474x/e9/d4/df/e9d4dfad17d0851baee2538da9171974.jpg',
-            productprice: 'R*****',
-        },
-        {
-            id: 2,
-            productname: 'Product 2',
-            productimg: 'https://i.pinimg.com/474x/e9/d4/df/e9d4dfad17d0851baee2538da9171974.jpg',
-            productprice: 'R*****',
-        },
-        {
-            id: 3,
-            productname: 'Product 3',
-            productimg: 'https://i.pinimg.com/474x/e9/d4/df/e9d4dfad17d0851baee2538da9171974.jpg',
-            productprice: 'R*****',
-        },
-        {
-            id: 4,
-            productname: 'Product 4',
-            productimg: 'https://i.pinimg.com/474x/e9/d4/df/e9d4dfad17d0851baee2538da9171974.jpg',
-            productprice: 'R*****',
-        },
-        {
-            id: 5,
-            productname: 'Product 5',
-            productimg: 'https://i.pinimg.com/474x/e9/d4/df/e9d4dfad17d0851baee2538da9171974.jpg',
-            productprice: 'R*****',
-        },
-        {
-            id: 6,
-            productname: 'Product 6',
-            productimg: 'https://i.pinimg.com/474x/e9/d4/df/e9d4dfad17d0851baee2538da9171974.jpg',
-            productprice: 'R*****',
-        },
-        {
-            id: 7,
-            productname: 'Product 7',
-            productimg: 'https://i.pinimg.com/474x/e9/d4/df/e9d4dfad17d0851baee2538da9171974.jpg',
-            productprice: 'R*****',
-        },
-        {
-            id: 8,
-            productname: 'Product 8',
-            productimg: 'https://i.pinimg.com/474x/e9/d4/df/e9d4dfad17d0851baee2538da9171974.jpg',
-            productprice: 'R*****',
-        },
-        {
-            id: 9,
-            productname: 'Product 9',
-            productimg: 'https://i.pinimg.com/474x/e9/d4/df/e9d4dfad17d0851baee2538da9171974.jpg',
-            productprice: 'R*****',
-        },
-        {
-            id: 10,
-            productname: 'Product 10',
-            productimg: 'https://i.pinimg.com/474x/e9/d4/df/e9d4dfad17d0851baee2538da9171974.jpg',
-            productprice: 'R*****',
-        },
-        {
-            id: 11,
-            productname: 'Product 11',
-            productimg: 'https://i.pinimg.com/474x/e9/d4/df/e9d4dfad17d0851baee2538da9171974.jpg',
-            productprice: 'R*****',
-        },
-        {
-            id: 12,
-            productname: 'Product 12',
-            productimg: 'https://i.pinimg.com/474x/e9/d4/df/e9d4dfad17d0851baee2538da9171974.jpg',
-            productprice: 'R*****',
-        },
-        {
-            id: 13,
-            productname: 'Product 13',
-            productimg: 'https://i.pinimg.com/474x/e9/d4/df/e9d4dfad17d0851baee2538da9171974.jpg',
-            productprice: 'R*****',
-        },
-        {
-            id: 14,
-            productname: 'Product 14',
-            productimg: 'https://i.pinimg.com/474x/e9/d4/df/e9d4dfad17d0851baee2538da9171974.jpg',
-            productprice: 'R*****',
-        },
-        {
-            id: 15,
-            productname: 'Product 15',
-            productimg: 'https://i.pinimg.com/474x/e9/d4/df/e9d4dfad17d0851baee2538da9171974.jpg',
-            productprice: 'R*****',
-        },
-        {
-            id: 16,
-            productname: 'Product 16',
-            productimg: 'https://i.pinimg.com/474x/e9/d4/df/e9d4dfad17d0851baee2538da9171974.jpg',
-            productprice: 'R*****',
-        },
-        {
-            id: 17,
-            productname: 'Product 17',
-            productimg: 'https://i.pinimg.com/474x/e9/d4/df/e9d4dfad17d0851baee2538da9171974.jpg',
-            productprice: 'R*****',
-        },
-        {
-            id: 18,
-            productname: 'Product 18',
-            productimg: 'https://i.pinimg.com/474x/e9/d4/df/e9d4dfad17d0851baee2538da9171974.jpg',
-            productprice: 'R*****',
-        },
-        {
-            id: 19,
-            productname: 'Product 19',
-            productimg: 'https://i.pinimg.com/474x/e9/d4/df/e9d4dfad17d0851baee2538da9171974.jpg',
-            productprice: 'R*****',
-        },
-        {
-            id: 20,
-            productname: 'Product 20',
-            productimg: 'https://i.pinimg.com/474x/e9/d4/df/e9d4dfad17d0851baee2538da9171974.jpg',
-            productprice: 'R*****',
-        },
-        {
-            id: 21,
-            productname: 'Product 21',
-            productimg: 'https://i.pinimg.com/474x/e9/d4/df/e9d4dfad17d0851baee2538da9171974.jpg',
-            productprice: 'R*****',
-        },
-        {
-            id: 22,
-            productname: 'Product 22',
-            productimg: 'https://i.pinimg.com/474x/e9/d4/df/e9d4dfad17d0851baee2538da9171974.jpg',
-            productprice: 'R*****',
-        },
-        {
-            id: 23,
-            productname: 'Product 23',
-            productimg: 'https://i.pinimg.com/474x/e9/d4/df/e9d4dfad17d0851baee2538da9171974.jpg',
-            productprice: 'R*****',
-        },
-        {
-            id: 24,
-            productname: 'Product 24',
-            productimg: 'https://i.pinimg.com/474x/e9/d4/df/e9d4dfad17d0851baee2538da9171974.jpg',
-            productprice: 'R*****',
-        },
-        {
-            id: 25,
-            productname: 'Product 25',
-            productimg: 'https://i.pinimg.com/474x/e9/d4/df/e9d4dfad17d0851baee2538da9171974.jpg',
-            productprice: 'R*****',
-        },
-        {
-            id: 26,
-            productname: 'Product 26',
-            productimg: 'https://i.pinimg.com/474x/e9/d4/df/e9d4dfad17d0851baee2538da9171974.jpg',
-            productprice: 'R*****',
-        },
-        {
-            id: 27,
-            productname: 'Product 27',
-            productimg: 'https://i.pinimg.com/474x/e9/d4/df/e9d4dfad17d0851baee2538da9171974.jpg',
-            productprice: 'R*****',
-        },
-        {
-            id: 28,
-            productname: 'Product 28',
-            productimg: 'https://i.pinimg.com/474x/e9/d4/df/e9d4dfad17d0851baee2538da9171974.jpg',
-            productprice: 'R*****',
-        }
-    ]
+    const [products, setProducts] = useState([]);
+
+    useEffect(() => {
+        axios.get('http://localhost:5000/api/cups/')
+          .then((res) => {
+            setProducts(res.data)
+          })
+          .catch()
+    })
 
     return (
         <div className="App2">
@@ -237,14 +78,19 @@ function Product() {
 
             <Container style={{marginLeft: '216px', marginTop: '-270px'}}>
                 <Row>
-                    {Products.map((product) => (
-                        <Col key={product.id}>
-                            <PropductCard
-                            productimg={product.productimg}
-                            productname={product.productname}
-                            productprice={product.productprice}/>
+                {products.map(product => {
+                        return (
+                            <Col key={product._id}>
+                            <Card style={{width: '270px', height: '390px', marginLeft: '28px', marginBottom: '30px', backgroundColor: '#869CAA', textAlign: 'center', padding: '9px'}}>
+                                <img src={product.img}  alt="cup" style={{width: '250px'}}/>
+                                <Card.Body style={{paddingLeft: "0px", paddingRight: "0px"}}>
+                                    <Card.Title style={{fontSize: '17pt', marginTop: '1px', color: '#0C4654'}}>{product.model}</Card.Title>
+                                    <Card.Text style={{fontSize: '17pt', marginTop: '10px', color: '#0C4654'}}>R {product.price}</Card.Text>
+                                </Card.Body>
+                            </Card>
                         </Col>
-                    ))}
+                        )
+                        })}
                 </Row>
             </Container>
 
