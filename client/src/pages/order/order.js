@@ -1,7 +1,20 @@
-import React from "react";
+import React, { useEffect, useState } from 'react';
 import { Card } from "react-bootstrap";
+import axios from 'axios';
 
 function Order() {
+
+    const [orders, setOrders] = useState([]);
+
+    useEffect(() => {
+        axios.get('http://localhost:5000/api/orders/')
+          .then((res) => {
+            setOrders(res.data)
+          })
+          .catch()
+    });
+
+
 
     return (
         <div className="App2">
@@ -12,124 +25,27 @@ function Order() {
 
             <br/>
 
-           <Card style={{width: '820px', height: '90px', marginLeft: '388px', backgroundColor: '#869CAA', textAlign: 'center', padding: '9px', marginBottom: '20px'}}>
-                <Card.Body>
-                    <Card.Title style={{fontSize: '20pt', marginTop: '1px', color: '#0C4654', fontSize: '28pt', textAlign: 'left'}}>
-                        1
-                    </Card.Title>
-                    <Card.Text style={{fontSize: '20pt', marginTop: '10px', color: '#0C4654', fontSize: '23pt', textAlign: 'left', marginLeft: '70px', marginTop: '-54px'}}>
-                        Users Name
-                    </Card.Text>
-                    <Card.Text style={{fontSize: '20pt', marginTop: '10px', color: '#0C4654', fontSize: '20pt', textAlign: 'left', marginLeft: '290px', marginTop: '-57px'}}>
-                        Order Number
-                    </Card.Text>
-                    <Card.Text style={{fontSize: '20pt', marginTop: '10px', color: '#865E81', fontSize: '23pt', textAlign: 'left', marginLeft: '620px', marginTop: '-62px'}}>
-                        Dispatch
-                    </Card.Text>
-                </Card.Body>
-            </Card>
 
-            <Card style={{width: '820px', height: '90px', marginLeft: '388px', backgroundColor: '#869CAA', textAlign: 'center', padding: '9px', marginBottom: '20px'}}>
-                <Card.Body>
-                    <Card.Title style={{fontSize: '20pt', marginTop: '1px', color: '#0C4654', fontSize: '28pt', textAlign: 'left'}}>
-                        2
-                    </Card.Title>
-                    <Card.Text style={{fontSize: '20pt', marginTop: '10px', color: '#0C4654', fontSize: '23pt', textAlign: 'left', marginLeft: '70px', marginTop: '-54px'}}>
-                        Users Name
-                    </Card.Text>
-                    <Card.Text style={{fontSize: '20pt', marginTop: '10px', color: '#0C4654', fontSize: '20pt', textAlign: 'left', marginLeft: '290px', marginTop: '-57px'}}>
-                        Order Number
-                    </Card.Text>
-                    <Card.Text style={{fontSize: '20pt', marginTop: '10px', color: '#865E81', fontSize: '23pt', textAlign: 'left', marginLeft: '620px', marginTop: '-62px'}}>
-                        Dispatch
-                    </Card.Text>
-                </Card.Body>
-            </Card>
-
-            <Card style={{width: '820px', height: '90px', marginLeft: '388px', backgroundColor: '#869CAA', textAlign: 'center', padding: '9px', marginBottom: '20px'}}>
-                <Card.Body>
-                    <Card.Title style={{fontSize: '20pt', marginTop: '1px', color: '#0C4654', fontSize: '28pt', textAlign: 'left'}}>
-                        3
-                    </Card.Title>
-                    <Card.Text style={{fontSize: '20pt', marginTop: '10px', color: '#0C4654', fontSize: '23pt', textAlign: 'left', marginLeft: '70px', marginTop: '-54px'}}>
-                        Users Name
-                    </Card.Text>
-                    <Card.Text style={{fontSize: '20pt', marginTop: '10px', color: '#0C4654', fontSize: '20pt', textAlign: 'left', marginLeft: '290px', marginTop: '-57px'}}>
-                        Order Number
-                    </Card.Text>
-                    <Card.Text style={{fontSize: '20pt', marginTop: '10px', color: '#865E81', fontSize: '23pt', textAlign: 'left', marginLeft: '620px', marginTop: '-62px'}}>
-                        Dispatch
-                    </Card.Text>
-                </Card.Body>
-            </Card>
-
-            <Card style={{width: '820px', height: '90px', marginLeft: '388px', backgroundColor: '#869CAA', textAlign: 'center', padding: '9px', marginBottom: '20px'}}>
-                <Card.Body>
-                    <Card.Title style={{fontSize: '20pt', marginTop: '1px', color: '#0C4654', fontSize: '28pt', textAlign: 'left'}}>
-                        4
-                    </Card.Title>
-                    <Card.Text style={{fontSize: '20pt', marginTop: '10px', color: '#0C4654', fontSize: '23pt', textAlign: 'left', marginLeft: '70px', marginTop: '-54px'}}>
-                        Users Name
-                    </Card.Text>
-                    <Card.Text style={{fontSize: '20pt', marginTop: '10px', color: '#0C4654', fontSize: '20pt', textAlign: 'left', marginLeft: '290px', marginTop: '-57px'}}>
-                        Order Number
-                    </Card.Text>
-                    <Card.Text style={{fontSize: '20pt', marginTop: '10px', color: '#865E81', fontSize: '23pt', textAlign: 'left', marginLeft: '620px', marginTop: '-62px'}}>
-                        Dispatch
-                    </Card.Text>
-                </Card.Body>
-            </Card>
-
-            <Card style={{width: '820px', height: '90px', marginLeft: '388px', backgroundColor: '#869CAA', textAlign: 'center', padding: '9px', marginBottom: '20px'}}>
-                <Card.Body>
-                    <Card.Title style={{fontSize: '20pt', marginTop: '1px', color: '#0C4654', fontSize: '28pt', textAlign: 'left'}}>
-                        5
-                    </Card.Title>
-                    <Card.Text style={{fontSize: '20pt', marginTop: '10px', color: '#0C4654', fontSize: '23pt', textAlign: 'left', marginLeft: '70px', marginTop: '-54px'}}>
-                        Users Name
-                    </Card.Text>
-                    <Card.Text style={{fontSize: '20pt', marginTop: '10px', color: '#0C4654', fontSize: '20pt', textAlign: 'left', marginLeft: '290px', marginTop: '-57px'}}>
-                        Order Number
-                    </Card.Text>
-                    <Card.Text style={{fontSize: '20pt', marginTop: '10px', color: '#865E81', fontSize: '23pt', textAlign: 'left', marginLeft: '620px', marginTop: '-62px'}}>
-                        Dispatch
-                    </Card.Text>
-                </Card.Body>
-            </Card>
-
-            <Card style={{width: '820px', height: '90px', marginLeft: '388px', backgroundColor: '#869CAA', textAlign: 'center', padding: '9px', marginBottom: '20px'}}>
-                <Card.Body>
-                    <Card.Title style={{fontSize: '20pt', marginTop: '1px', color: '#0C4654', fontSize: '28pt', textAlign: 'left'}}>
-                        6
-                    </Card.Title>
-                    <Card.Text style={{fontSize: '20pt', marginTop: '10px', color: '#0C4654', fontSize: '23pt', textAlign: 'left', marginLeft: '70px', marginTop: '-54px'}}>
-                        Users Name
-                    </Card.Text>
-                    <Card.Text style={{fontSize: '20pt', marginTop: '10px', color: '#0C4654', fontSize: '20pt', textAlign: 'left', marginLeft: '290px', marginTop: '-57px'}}>
-                        Order Number
-                    </Card.Text>
-                    <Card.Text style={{fontSize: '20pt', marginTop: '10px', color: '#865E81', fontSize: '23pt', textAlign: 'left', marginLeft: '620px', marginTop: '-62px'}}>
-                        Dispatch
-                    </Card.Text>
-                </Card.Body>
-            </Card>
-
-            <Card style={{width: '820px', height: '90px', marginLeft: '388px', backgroundColor: '#869CAA', textAlign: 'center', padding: '9px'}}>
-                <Card.Body>
-                    <Card.Title style={{fontSize: '20pt', marginTop: '1px', color: '#0C4654', fontSize: '28pt', textAlign: 'left'}}>
-                        7
-                    </Card.Title>
-                    <Card.Text style={{fontSize: '20pt', marginTop: '10px', color: '#0C4654', fontSize: '23pt', textAlign: 'left', marginLeft: '70px', marginTop: '-54px'}}>
-                        Users Name
-                    </Card.Text>
-                    <Card.Text style={{fontSize: '20pt', marginTop: '10px', color: '#0C4654', fontSize: '20pt', textAlign: 'left', marginLeft: '290px', marginTop: '-57px'}}>
-                        Order Number
-                    </Card.Text>
-                    <Card.Text style={{fontSize: '20pt', marginTop: '10px', color: '#865E81', fontSize: '23pt', textAlign: 'left', marginLeft: '620px', marginTop: '-62px'}}>
-                        Dispatch
-                    </Card.Text>
-                </Card.Body>
-            </Card>
+            {orders.map(order => {
+                return (
+                    <Card style={{width: '820px', height: '90px', marginLeft: '388px', backgroundColor: '#869CAA', textAlign: 'center', padding: '9px', marginBottom: '20px'}}>
+                        <Card.Body>
+                            <Card.Title style={{fontSize: '20pt', marginTop: '1px', color: '#0C4654', fontSize: '28pt', textAlign: 'left'}}>
+                                {order.number}
+                            </Card.Title>
+                            <Card.Text style={{fontSize: '20pt', marginTop: '10px', color: '#0C4654', fontSize: '23pt', textAlign: 'left', marginLeft: '130px', marginTop: '-54px'}}>
+                                {order.username}
+                            </Card.Text>
+                            <Card.Text style={{fontSize: '20pt', marginTop: '10px', color: '#0C4654', fontSize: '20pt', textAlign: 'left', marginLeft: '380px', marginTop: '-57px'}}>
+                                {order.order_number}
+                            </Card.Text>
+                            <Card.Text style={{fontSize: '20pt', marginTop: '10px', color: '#865E81', fontSize: '23pt', textAlign: 'left', marginLeft: '620px', marginTop: '-62px'}}>
+                                Dispatch
+                            </Card.Text>
+                        </Card.Body>
+                    </Card>
+                )
+            })}
 
             <br/>
             

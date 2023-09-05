@@ -19,7 +19,7 @@ app.use(express.json())
 app.use(express.urlencoded({ extended: false }))
 
 app.use(cupRoute)
-
+app.use(orderRoute)
 
 mongoose.connect(process.env.DB_CONNECTION, {
     useNewUrlParser: true,

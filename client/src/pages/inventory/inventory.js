@@ -1,9 +1,19 @@
-import React from "react";
+import React, { useEffect, useState } from 'react';
 import Table from 'react-bootstrap/Table';
 import icon from './trash-2.png';
+import axios from 'axios';
 
 function Inventory() {
 
+    const [products, setProducts] = useState([]);
+
+    useEffect(() => {
+        axios.get('http://localhost:5000/api/cups/')
+          .then((res) => {
+            setProducts(res.data)
+          })
+          .catch()
+    });
 
     
     return (
@@ -35,85 +45,28 @@ function Inventory() {
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <th style={{border: '3px solid #055E6C', backgroundColor: '#869CAA'}}>
-                            <img src="https://i.pinimg.com/474x/e9/d4/df/e9d4dfad17d0851baee2538da9171974.jpg"  alt="travel mug" style={{height: '120px'}}/>
-                        </th>
-                        <th style={{border: '3px solid #055E6C', backgroundColor: '#869CAA', color: '#0C4654', fontWeight: '700', fontSize: '16pt', paddingTop: '50px'}}>
-                            Product 1
-                        </th>
-                        <th style={{border: '3px solid #055E6C', backgroundColor: '#869CAA', color: '#0C4654', fontWeight: '700', fontSize: '16pt', paddingTop: '50px'}}>
-                            R*****
-                        </th>
-                        <th style={{border: '3px solid #055E6C', backgroundColor: '#869CAA', paddingTop: '50px'}}>
-                            <input type="number" name="age" style={{width: '30px', backgroundColor: '#CABCB1', border: 'none'}}/>
-                        </th>
-                        <th style={{border: '3px solid #055E6C', backgroundColor: '#869CAA', paddingTop: '50px'}}>
-                            <img src={icon}  alt="travel mug" style={{height: '38px'}}/>
-                        </th>
-                    </tr>
-                    <tr>
-                        <th style={{border: '3px solid #055E6C', backgroundColor: '#869CAA'}}>
-                            <img src="https://i.pinimg.com/474x/e9/d4/df/e9d4dfad17d0851baee2538da9171974.jpg"  alt="travel mug" style={{height: '120px'}}/>
-                        </th>
-                        <th style={{border: '3px solid #055E6C', backgroundColor: '#869CAA', color: '#0C4654', fontWeight: '700', fontSize: '16pt', paddingTop: '50px'}}>
-                            Product 2
-                        </th>
-                        <th style={{border: '3px solid #055E6C', backgroundColor: '#869CAA', color: '#0C4654', fontWeight: '700', fontSize: '16pt', paddingTop: '50px'}}>
-                            R*****
-                        </th>
-                        <th style={{border: '3px solid #055E6C', backgroundColor: '#869CAA', paddingTop: '50px'}}>
-                            <input type="number" name="age" style={{width: '30px', backgroundColor: '#CABCB1', border: 'none'}}/>
-                        </th>
-                        <th style={{border: '3px solid #055E6C', backgroundColor: '#869CAA', paddingTop: '50px'}}>
-                            <img src={icon}  alt="travel mug" style={{height: '38px'}}/>
-                        </th>
-                    </tr>
-                    <tr>
-                        <th style={{border: '3px solid #055E6C', backgroundColor: '#869CAA'}}>
-                            <img src="https://i.pinimg.com/474x/e9/d4/df/e9d4dfad17d0851baee2538da9171974.jpg"  alt="travel mug" style={{height: '120px'}}/>
-                        </th>
-                        <th style={{border: '3px solid #055E6C', backgroundColor: '#869CAA', color: '#0C4654', fontWeight: '700', fontSize: '16pt', paddingTop: '50px'}}>
-                            Product 3
-                        </th>
-                        <th style={{border: '3px solid #055E6C', backgroundColor: '#869CAA', color: '#0C4654', fontWeight: '700', fontSize: '16pt', paddingTop: '50px'}}>
-                            R*****
-                        </th>
-                        <th style={{border: '3px solid #055E6C', backgroundColor: '#869CAA', paddingTop: '50px'}}>
-                            <input type="number" name="age" style={{width: '30px', backgroundColor: '#CABCB1', border: 'none'}}/>
-                        </th>
-                        <th style={{border: '3px solid #055E6C', backgroundColor: '#869CAA', paddingTop: '50px'}}>
-                            <img src={icon}  alt="travel mug" style={{height: '38px'}}/>
-                        </th>
-                    </tr>
-                    <tr>
-                        <th style={{border: '3px solid #055E6C', backgroundColor: '#869CAA'}}>
-                            <img src="https://i.pinimg.com/474x/e9/d4/df/e9d4dfad17d0851baee2538da9171974.jpg"  alt="travel mug" style={{height: '120px'}}/>
-                        </th>
-                        <th style={{border: '3px solid #055E6C', backgroundColor: '#869CAA', color: '#0C4654', fontWeight: '700', fontSize: '16pt', paddingTop: '50px'}}>
-                            Product 4
-                        </th>
-                        <th style={{border: '3px solid #055E6C', backgroundColor: '#869CAA', color: '#0C4654', fontWeight: '700', fontSize: '16pt', paddingTop: '50px'}}>
-                            R*****
-                        </th>
-                        <th style={{border: '3px solid #055E6C', backgroundColor: '#869CAA', paddingTop: '50px'}}>
-                            <input type="number" name="age" style={{width: '30px', backgroundColor: '#CABCB1', border: 'none'}}/>
-                        </th>
-                        <th style={{border: '3px solid #055E6C', backgroundColor: '#869CAA', paddingTop: '50px'}}>
-                            <img src={icon}  alt="travel mug" style={{height: '38px'}}/>
-                        </th>
-                    </tr>
-                    <tr>
-                        <th style={{border: '3px solid #055E6C', backgroundColor: '#869CAA'}}>
-                            <img src="https://i.pinimg.com/474x/e9/d4/df/e9d4dfad17d0851baee2538da9171974.jpg"  alt="travel mug" style={{height: '120px'}}/>
-                        </th>
-                        <th style={{border: '3px solid #055E6C', backgroundColor: '#869CAA', color: '#0C4654', fontWeight: '700', fontSize: '16pt', paddingTop: '50px'}}>
-                            More will be added
-                        </th>
-                        <th style={{border: '3px solid #055E6C', backgroundColor: '#869CAA'}}></th>
-                        <th style={{border: '3px solid #055E6C', backgroundColor: '#869CAA'}}></th>
-                        <th style={{border: '3px solid #055E6C', backgroundColor: '#869CAA'}}></th>
-                    </tr>
+                    {products.map(product => {
+                        return (
+                            <tr>
+                                <th style={{border: '3px solid #055E6C', backgroundColor: '#869CAA'}}>
+                                    <img src={product.img}  alt="travel mug" style={{height: '120px'}}/>
+                                </th>
+                                <th style={{border: '3px solid #055E6C', backgroundColor: '#869CAA', color: '#0C4654', fontWeight: '700', fontSize: '16pt', paddingTop: '50px'}}>
+                                    {product.make}, {product.model}
+                                </th>
+                                <th style={{border: '3px solid #055E6C', backgroundColor: '#869CAA', color: '#0C4654', fontWeight: '700', fontSize: '16pt', paddingTop: '50px'}}>
+                                    R {product.price}
+                                </th>
+                                <th style={{border: '3px solid #055E6C', backgroundColor: '#869CAA', paddingTop: '50px'}}>
+                                    {product.quantity}
+                                    {/* <input type="number" name="age" style={{width: '30px', backgroundColor: '#CABCB1', border: 'none'}}/> */}
+                                </th>
+                                <th style={{border: '3px solid #055E6C', backgroundColor: '#869CAA', paddingTop: '50px'}}>
+                                    <img src={icon}  alt="travel mug" style={{height: '38px'}}/>
+                                </th>
+                            </tr>
+                        )
+                    })}
                 </tbody>
             </Table>
         </div>
