@@ -3,13 +3,13 @@ const { Client } = require("../models/clients");
 const bcrypt = require("bcrypt");
 const Joi = require("joi");
 
-router.post("/", async (req, res) => {
+router.post('/api/auth', async (req, res) => {
 	try {
 		const { error } = validate(req.body);
 		if (error)
 			return res.status(400).send({ message: error.details[0].message });
 
-		const client = await Client.findOne({ email: req.body.email });
+		const client = await Client.findOne({ username: req.body.username });
 		if (!client)
 			return res.status(401).send({ message: "Invalid Email or Password" });
 
@@ -29,7 +29,7 @@ router.post("/", async (req, res) => {
 
 const validate = (data) => {
 	const schema = Joi.object({
-		username: Joi.string().required().label("Username"),
+		username: Joi.string().username().required().label("Username"),
 		password: Joi.string().required().label("Password"),
 	});
 	return schema.validate(data);

@@ -22,7 +22,7 @@ function SingleProduct() {
 
     const cid =  localStorage.getItem("cupID");
 
-    // Get info from spesific song in the database
+    // Get info from spesific cup in the database
     useEffect(() => {
         let payload = { make: productMake, model: productModel, price: productPrice, quantity: productQuantity, 
         capacity: productCapacity, product_code: productProducode, img: productImg, color_img1: productColorimg1, color_img2: productColorimg2, 

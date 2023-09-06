@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Table from 'react-bootstrap/Table';
-import icon from './trash-2.png';
+import icon from './dustbin (2).png';
+import icon2 from './edit.png';
 import axios from 'axios';
 
 function Inventory() {
@@ -14,6 +15,11 @@ function Inventory() {
           })
           .catch()
     });
+
+    const handleUpdate = (productid) => {
+        localStorage.setItem("cupUID", productid)
+        window.location = "/update_inventory";
+    };
 
     const handleDelete=(id)=>{
         axios.delete('http://localhost:5000/api/cup/'+id)
@@ -44,6 +50,12 @@ function Inventory() {
                             Quantity
                         </th>
                         <th style={{width: '100px', border: '3px solid #055E6C', backgroundColor: '#418695', color: '#CABCB1', fontWeight: '700', fontSize: '16pt'}}>
+                            Discount
+                        </th>
+                        <th style={{width: '100px', border: '3px solid #055E6C', backgroundColor: '#418695', color: '#CABCB1', fontWeight: '700', fontSize: '16pt'}}>
+                            Update
+                        </th>
+                        <th style={{width: '100px', border: '3px solid #055E6C', backgroundColor: '#418695', color: '#CABCB1', fontWeight: '700', fontSize: '16pt'}}>
                             Remove
                         </th>
                     </tr>
@@ -65,8 +77,14 @@ function Inventory() {
                                     {product.quantity}
                                     {/* <input type="number" name="age" style={{width: '30px', backgroundColor: '#CABCB1', border: 'none'}}/> */}
                                 </th>
+                                <th style={{border: '3px solid #055E6C', backgroundColor: '#869CAA', color: '#0C4654', fontWeight: '700', fontSize: '16pt', paddingTop: '50px'}}>
+                                    {product.disccount}%
+                                </th>
                                 <th style={{border: '3px solid #055E6C', backgroundColor: '#869CAA', paddingTop: '50px'}}>
-                                    <img src={icon}  alt="travel mug" style={{height: '38px'}} onClick={()=>handleDelete(product._id)}/>
+                                    <img src={icon2}  alt="travel mug" style={{height: '38px', cursor: 'pointer'}} onClick={()=>handleUpdate(product._id)}/>
+                                </th>
+                                <th style={{border: '3px solid #055E6C', backgroundColor: '#869CAA', paddingTop: '50px'}}>
+                                    <img src={icon}  alt="travel mug" style={{height: '38px', cursor: 'pointer'}} onClick={()=>handleDelete(product._id)}/>
                                 </th>
                             </tr>
                         )

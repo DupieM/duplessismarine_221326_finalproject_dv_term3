@@ -12,7 +12,7 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 
 function Landing() {
-    
+
     const [products, setProducts] = useState([]);
 
     useEffect(() => {
@@ -149,24 +149,24 @@ function Landing() {
 
             <Container>
                 <Row>
-                    {DiscountedProduct.map((product) => (
-                        <Col key={product.id}>
-                            <PropductCard
-                            productimg={product.productimg}
-                            productname={product.productname}
-                            productprice={product.productprice}/>
-                        </Col>
-                    ))}
+                    {products1.map(product => {
+                        return (
+                            <Col key={product._id}>
+                                <Card style={{width: '270px', height: '410px', marginLeft: '28px', marginBottom: '30px', backgroundColor: '#869CAA', textAlign: 'center', padding: '9px'}}>
+                                    <img src={product.img}  alt="cup" style={{width: '250px'}}/>
+                                    <Card.Body style={{paddingLeft: "0px", paddingRight: "0px"}}>
+                                        <Card.Title style={{fontSize: '17pt', marginTop: '1px', color: '#0C4654'}}>{product.model}</Card.Title>
+                                        <Card.Text style={{fontSize: '17pt', marginTop: '10px', color: '#0C4654'}}>R {product.price}</Card.Text>
+                                    </Card.Body>
+                                    <button>
+                                        View
+                                    </button>
+                                </Card>  
+                            </Col>
+                        )
+                    })}
                 </Row>
             </Container>
-
-            {/* <Card style={{width: '20%', height: '420px', marginLeft: '28px', backgroundColor: '#869CAA', textAlign: 'center', padding: '9px'}}>
-                <img src="https://i.pinimg.com/474x/e9/d4/df/e9d4dfad17d0851baee2538da9171974.jpg"  alt="Product picture"/>
-                <Card.Body>
-                    <Card.Title style={{fontSize: '20pt', marginTop: '1px', color: '#0C4654'}}>Name of product</Card.Title>
-                    <Card.Text style={{fontSize: '20pt', marginTop: '10px', color: '#0C4654'}}> Price</Card.Text>
-                </Card.Body>
-            </Card> */}
 
             <br/>
         </div>

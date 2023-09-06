@@ -52,6 +52,14 @@ const CupSchema = mongoose.Schema({
     care_instructions: {
         type: String,
         required: true
+    },
+    timestamp: {
+        type: Date,
+        required: true
+    },
+    discount: {
+        type: Number,
+        required: false
     }
 })
 

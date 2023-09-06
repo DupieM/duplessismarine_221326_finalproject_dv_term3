@@ -34,6 +34,9 @@ function Cart() {
             <h2>{product.model}</h2>
             <h2>Quantity</h2>
             <h2>R{product.price}</h2>
+            <h2>{product.model}</h2>
+            <h2>Quantity</h2>
+            <h2>R{product.price}</h2>
 
 
             <h3>Total:</h3>

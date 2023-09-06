@@ -2,13 +2,13 @@ const router = require("express").Router();
 const { Client, validate } = require('../models/clients');
 const bcrypt = require("bcrypt");
 
-router.post("/", async (req, res) => {
+router.post("/api/clients", async (req, res) => {
 	try {
 		const { error } = validate(req.body);
 		if (error)
 			return res.status(400).send({ message: error.details[0].message });
 
-		const client = await Client.findOne({ email: req.body.email });
+		const client = await Client.findOne({ username: req.body.username });
 		if (client)
 			return res
 				.status(409)

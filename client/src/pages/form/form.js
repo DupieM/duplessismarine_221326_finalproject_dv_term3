@@ -23,19 +23,17 @@ function Form() {
     margin: "10px",
   }
 
+const date = new Date();
+
   const addProduct = (e) => {
     let payload = { make: productMake, model: productModel, price: productPrice, quantity: productQuantity, 
     capacity: productCapacity, product_code: productProducode, img: productImg, color_img1: productColorimg1, color_img2: productColorimg2, 
-    color_img3: productColorimg3, color_img4: productColorimg4, description: productDescription, care_instructions: productCareinstructions}
+    color_img3: productColorimg3, color_img4: productColorimg4, description: productDescription, care_instructions: productCareinstructions, timestamp: date }
     axios.post('http://localhost:5000/api/cup', payload)
       .then()
       .catch()
 
   }
-
-// const handleDelete=(id)=>{
-//   axios.delete('http://localhost:5000/api/cup/'+id)
-// }
 
   return (
 

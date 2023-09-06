@@ -9,6 +9,7 @@ import LogIn from   './pages/log_in';
 import Form from './pages/form/form';
 import Cart from './pages/cart/cart';
 import Checkout from './pages/cart/checkout';
+import UpdateInventory from './pages/inventory/update_inventory';
 import BasicNavbar from './components/navbar';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Outlet } from 'react-router';
@@ -34,6 +35,7 @@ function App() {
             <Route path='/single_product' element= { <SingleProduct />} />
             <Route path='/cart' element= { <Cart />} />
             <Route path='/checkout' element= { <Checkout />} />
+            <Route path='/update_inventory' element= { <UpdateInventory />} />
         </Route>
       </Routes>
     </div>
