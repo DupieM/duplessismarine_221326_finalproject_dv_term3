@@ -33,9 +33,9 @@ function Form() {
 
   }
 
-const handleDelete=(id)=>{
-  axios.delete('http://localhost:5000/api/cup/'+id)
-}
+// const handleDelete=(id)=>{
+//   axios.delete('http://localhost:5000/api/cup/'+id)
+// }
 
   return (
 

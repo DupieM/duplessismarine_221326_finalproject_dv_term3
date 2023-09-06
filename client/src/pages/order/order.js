@@ -14,7 +14,9 @@ function Order() {
           .catch()
     });
 
-
+    const handleDelete=(id)=>{
+        axios.delete('http://localhost:5000/api/order/'+id)
+    }
 
     return (
         <div className="App2">
@@ -39,7 +41,7 @@ function Order() {
                             <Card.Text style={{fontSize: '20pt', marginTop: '10px', color: '#0C4654', fontSize: '20pt', textAlign: 'left', marginLeft: '380px', marginTop: '-57px'}}>
                                 {order.order_number}
                             </Card.Text>
-                            <Card.Text style={{fontSize: '20pt', marginTop: '10px', color: '#865E81', fontSize: '23pt', textAlign: 'left', marginLeft: '620px', marginTop: '-62px'}}>
+                            <Card.Text style={{fontSize: '20pt', marginTop: '10px', color: '#865E81', fontSize: '23pt', textAlign: 'left', marginLeft: '620px', marginTop: '-62px', cursor: 'pointer'}} onClick={()=>handleDelete(order._id)}>
                                 Dispatch
                             </Card.Text>
                         </Card.Body>

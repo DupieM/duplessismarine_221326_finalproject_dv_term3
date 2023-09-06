@@ -1,4 +1,3 @@
-import React from "react";
 import icon from './price_tag.png';
 import icon2 from './brand.png';
 import icon3 from './color-palette.png';
@@ -9,86 +8,30 @@ import {Container, Row, Col} from "react-bootstrap";
 import { Card, CarouselItem } from "react-bootstrap";
 import { Carousel } from "react-bootstrap";
 import PropductCard from "../products/product_card";
+import axios from 'axios';
+import React, { useEffect, useState } from 'react';
 
 function Landing() {
+    
+    const [products, setProducts] = useState([]);
 
-    const NewestProduct = [
-        {
-            id: 1,
-            productname: 'Product 1',
-            productimg: 'https://i.pinimg.com/474x/e9/d4/df/e9d4dfad17d0851baee2538da9171974.jpg',
-            productprice: 'R*****',
-        },
-        {
-            id: 2,
-            productname: 'Product 2',
-            productimg: 'https://i.pinimg.com/474x/e9/d4/df/e9d4dfad17d0851baee2538da9171974.jpg',
-            productprice: 'R*****',
-        },
-        {
-            id: 3,
-            productname: 'Product 3',
-            productimg: 'https://i.pinimg.com/474x/e9/d4/df/e9d4dfad17d0851baee2538da9171974.jpg',
-            productprice: 'R*****',
-        },
-        {
-            id: 4,
-            productname: 'Product 4',
-            productimg: 'https://i.pinimg.com/474x/e9/d4/df/e9d4dfad17d0851baee2538da9171974.jpg',
-            productprice: 'R*****',
-        },
-    ]
+    useEffect(() => {
+        axios.get('http://localhost:5000/api/newcups/')
+          .then((res) => {
+            setProducts(res.data)
+          })
+          .catch()
+    });
 
-    const DiscountedProduct = [
-        {
-            id: 1,
-            productname: 'Product 1',
-            productimg: 'https://i.pinimg.com/474x/e9/d4/df/e9d4dfad17d0851baee2538da9171974.jpg',
-            productprice: 'R*****',
-        },
-        {
-            id: 2,
-            productname: 'Product 2',
-            productimg: 'https://i.pinimg.com/474x/e9/d4/df/e9d4dfad17d0851baee2538da9171974.jpg',
-            productprice: 'R*****',
-        },
-        {
-            id: 3,
-            productname: 'Product 3',
-            productimg: 'https://i.pinimg.com/474x/e9/d4/df/e9d4dfad17d0851baee2538da9171974.jpg',
-            productprice: 'R*****',
-        },
-        {
-            id: 4,
-            productname: 'Product 4',
-            productimg: 'https://i.pinimg.com/474x/e9/d4/df/e9d4dfad17d0851baee2538da9171974.jpg',
-            productprice: 'R*****',
-        },
-        {
-            id: 5,
-            productname: 'Product 5',
-            productimg: 'https://i.pinimg.com/474x/e9/d4/df/e9d4dfad17d0851baee2538da9171974.jpg',
-            productprice: 'R*****',
-        },
-        {
-            id: 6,
-            productname: 'Product 6',
-            productimg: 'https://i.pinimg.com/474x/e9/d4/df/e9d4dfad17d0851baee2538da9171974.jpg',
-            productprice: 'R*****',
-        },
-        {
-            id: 7,
-            productname: 'Product 7',
-            productimg: 'https://i.pinimg.com/474x/e9/d4/df/e9d4dfad17d0851baee2538da9171974.jpg',
-            productprice: 'R*****',
-        },
-        {
-            id: 8,
-            productname: 'Product 8',
-            productimg: 'https://i.pinimg.com/474x/e9/d4/df/e9d4dfad17d0851baee2538da9171974.jpg',
-            productprice: 'R*****',
-        },
-    ]
+    const [products1, setProducts1] = useState([]);
+
+    useEffect(() => {
+        axios.get('http://localhost:5000/api/discups/')
+          .then((res) => {
+            setProducts1(res.data)
+          })
+          .catch()
+    });
 
 
     return (
@@ -179,14 +122,22 @@ function Landing() {
 
             <Container>
                 <Row>
-                    {NewestProduct.map((product) => (
-                        <Col key={product.id} >
-                            <PropductCard
-                            productimg={product.productimg}
-                            productname={product.productname}
-                            productprice={product.productprice}/>
-                        </Col>
-                    ))}
+                    {products.map(product => {
+                        return (
+                            <Col key={product._id}>
+                                <Card style={{width: '270px', height: '410px', marginLeft: '28px', marginBottom: '30px', backgroundColor: '#869CAA', textAlign: 'center', padding: '9px'}}>
+                                    <img src={product.img}  alt="cup" style={{width: '250px'}}/>
+                                    <Card.Body style={{paddingLeft: "0px", paddingRight: "0px"}}>
+                                        <Card.Title style={{fontSize: '17pt', marginTop: '1px', color: '#0C4654'}}>{product.model}</Card.Title>
+                                        <Card.Text style={{fontSize: '17pt', marginTop: '10px', color: '#0C4654'}}>R {product.price}</Card.Text>
+                                    </Card.Body>
+                                    <button>
+                                        View
+                                    </button>
+                                </Card>  
+                            </Col>
+                        )
+                    })}
                 </Row>
             </Container>
 

@@ -11,7 +11,12 @@ router.get('/api/orders/', async (req, res) => {
 })
 
 //Delete 
-
+router.delete('/api/order/:id', async (req, res) => {
+    const { id } = req.params.id
+    await OrderSchema.findByIdAndDelete(req.params.id)
+        .then(response => res.json(response))
+        .catch(error => res.status(500).json(error))
+})
 
 //Create
 router.post('/api/order', async (req, res) => {

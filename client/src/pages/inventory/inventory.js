@@ -15,6 +15,10 @@ function Inventory() {
           .catch()
     });
 
+    const handleDelete=(id)=>{
+        axios.delete('http://localhost:5000/api/cup/'+id)
+    }
+
     
     return (
         <div className="App2">
@@ -62,7 +66,7 @@ function Inventory() {
                                     {/* <input type="number" name="age" style={{width: '30px', backgroundColor: '#CABCB1', border: 'none'}}/> */}
                                 </th>
                                 <th style={{border: '3px solid #055E6C', backgroundColor: '#869CAA', paddingTop: '50px'}}>
-                                    <img src={icon}  alt="travel mug" style={{height: '38px'}}/>
+                                    <img src={icon}  alt="travel mug" style={{height: '38px'}} onClick={()=>handleDelete(product._id)}/>
                                 </th>
                             </tr>
                         )

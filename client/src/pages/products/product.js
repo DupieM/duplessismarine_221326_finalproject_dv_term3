@@ -85,7 +85,6 @@ function Product() {
             <Container style={{marginLeft: '216px', marginTop: '-270px'}}>
                 <Row>
                 {products.map(product => {
-
                         return (
                                 <Col key={product._id}>
                                     <Card style={{width: '270px', height: '410px', marginLeft: '28px', marginBottom: '30px', backgroundColor: '#869CAA', textAlign: 'center', padding: '9px'}}>

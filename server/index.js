@@ -5,6 +5,9 @@ const { log } = require('console');
 const cupRoute = require('./routes/cups')
 const clientRoute = require('./routes/clients')
 const orderRoute = require('./routes/order')
+const authRoutes = require("./routes/auth");
+const newcupRoute = require("./routes/newcups")
+const discupRoute = require("./routes/discountedcups")
 
 require('dotenv/config')
 
@@ -20,6 +23,10 @@ app.use(express.urlencoded({ extended: false }))
 
 app.use(cupRoute)
 app.use(orderRoute)
+app.use(newcupRoute)
+app.use(discupRoute)
+app.use("/api/users", clientRoute);
+app.use("/api/auth", authRoutes);
 
 mongoose.connect(process.env.DB_CONNECTION, {
     useNewUrlParser: true,
