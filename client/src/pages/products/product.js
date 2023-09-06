@@ -38,12 +38,21 @@ function Product() {
                     <Accordion.Header>Filter by Brand</Accordion.Header>
                     <Accordion.Body>
                         <ul style={{listStyleType: 'none'}}>
-                            <li>Brand 1</li>
-                            <li>Brand 2</li>
-                            <li>Brand 3</li>
-                            <li>Brand 4</li>
-                            <li>Brand 5</li>
-                            <li>Add more</li>
+                            <li>Bodum</li>
+                            <li>Built</li>
+                            <li>Carrol boyes</li>
+                            <li>DeLonghi</li>
+                            <li>Ecoffee Cup</li>
+                            <li>Eva Solo</li>
+                            <li>Joseph Joseph</li>
+                            <li>KeepCup</li>
+                            <li>Kulgo</li>
+                            <li>Le Creuset</li>
+                            <li>Mepal</li>
+                            <li>MiiR</li>
+                            <li>Sengetti</li>
+                            <li>W&P</li>
+                            <li>Zoku</li>
                         </ul>
                     </Accordion.Body>
                 </Accordion.Item>
@@ -51,9 +60,9 @@ function Product() {
                     <Accordion.Header>Filter by Prize</Accordion.Header>
                     <Accordion.Body>
                         <ul style={{listStyleType: 'none'}}>
-                            <li>Prize Range 1</li>
-                            <li>Prize Range 2</li>
-                            <li>Prize Range 3</li>
+                            <li>R100 to R250</li>
+                            <li>R300 to R450</li>
+                            <li>R500 to R650</li>
                         </ul>
                     </Accordion.Body>
                 </Accordion.Item>
@@ -71,12 +80,14 @@ function Product() {
                     <Accordion.Header>Filter by Color</Accordion.Header>
                     <Accordion.Body>
                         <ul style={{listStyleType: 'none'}}>
-                            <li>Color 1</li>
-                            <li>Color 2</li>
-                            <li>Color 3</li>
-                            <li>Color 4</li>
-                            <li>Color 5</li>
-                            <li>Add more</li>
+                            <li>Red</li>
+                            <li>Orrange</li>
+                            <li>Yellow</li>
+                            <li>Blue</li>
+                            <li>Green</li>
+                            <li>Pink</li>
+                            <li>Natural</li>
+                            <li>Greys</li>
                         </ul>
                     </Accordion.Body>
                 </Accordion.Item>

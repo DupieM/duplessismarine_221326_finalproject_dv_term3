@@ -18,7 +18,7 @@ router.get('/api/cup/:id', async (req, res) => {
 
 
 //Update
-router.put('/api/updatecup/:id', async (req, res) => {
+router.patch('/api/updatecup/:id', async (req, res) => {
     console.log(req.body);
     // let stock = +req.body.varOne + +req.body.varTwo + +req.body.varThree;
 
