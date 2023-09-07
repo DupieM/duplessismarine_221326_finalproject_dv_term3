@@ -10,7 +10,7 @@ const ClientSchema = mongoose.Schema({
     },
     email: {
         type: String,
-        required: true
+        required: false
     }, 
     password: { 
         type: String, 
@@ -36,5 +36,4 @@ const validate = (data) => {
 	return schema.validate(data);
 };
 
-
-module.exports = { Client, validate };
+module.exports =  { Client, validate };

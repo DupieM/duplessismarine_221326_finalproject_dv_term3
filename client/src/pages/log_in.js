@@ -3,29 +3,51 @@ import axios from 'axios';
 import icon4 from './logo3.png';
 import loginimg from './Login_picture 1.png';
 import { Button, Form } from "react-bootstrap";
+import '../App.css';
+import { useNavigate} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 function LogIn() {
-    const [data, setData] = useState({ username: "", password: "" });
-    const [error, setError] = useState("");
 
-    const handleChange = ({ currentTarget: input }) => {
-		setData({ ...data, [input.name]: input.value });
-	};
+    //const [data, setData] = useState({ username: "", password: "" });
+    const [username, setUsername] = useState();
+    const [password, setPassword] = useState();
+    const [error, setError] = useState("");
+    
+
+    
 
     const handleSubmit = async (e) => {
         e.preventDefault();
+    
         try {
+            const payload = {
+                username: username,
+                password: password
+            }
+            console.log(payload)
             const url = "http://localhost:5000/api/auth";
-            const { data: res } = await axios.post(url, data);
-            localStorage.setItem("token", res.data);
+            const response = await axios.post(url, payload);
+    
+            // Assuming the response contains the token
+            const token = response.data;
+    
+            localStorage.setItem("token", token);
             window.location = "/";
         } catch (error) {
             if (error.response && error.response.status >= 400 && error.response.status <= 500) {
                 setError(error.response.data.message);
+            } else {
+                // Handle other types of errors here
+                console.error("An error occurred:", error);
             }
         }
     };
+    
 
+
+
+    /* Login Form */
     return (
         <div className="App2">
             <img src={icon4} alt="logo" style={{ width: '280px', marginTop: '-520px', marginLeft: '240px' }} />
@@ -37,10 +59,10 @@ function LogIn() {
                         <input
                             type="text"
                             className="form-control m-2"
-                            name="username"
-                            onChange={handleChange}
-                            value={data.username}
-                            required
+                            placeholder="Username"
+                            onChange={e => setUsername(e.target.value)}
+							//value={data.username}
+							required
                             style={{ width: '250px', border: '2px solid #215273', fontSize: '12pt' }}
                         />
                     </label>
@@ -48,15 +70,25 @@ function LogIn() {
                         <input
                             type="password" /* Change the input type to password */
                             className="form-control m-2"
-                            name="password"
-                            onChange={handleChange}
-                            value={data.password}
-                            required
+                            placeholder="Password"
+                            onChange={e => setPassword(e.target.value)}
+							//value={data.password}
+							required
                             style={{ width: '250px', border: '2px solid #215273', fontSize: '12pt' }}
                         />
                     </label>
                     <h6 style={{ width: '340px' }}>Forgot Password?</h6>
-                    <button style={{ border: 'none', fontSize: '20pt', marginTop: '12px', fontWeight: 'bold', marginBottom: '197px', borderRadius: '30px', backgroundColor: '#055E6C', color: '#CABCB1', padding: '8px', width: '160px' }} type="submit">
+
+                    <Link to={`/sing_up`}>
+                        Sing Up
+                    </Link>
+
+                   
+                    <button 
+                        style={{ border: 'none', fontSize: '20pt', marginTop: '12px', fontWeight: 'bold', marginBottom: '197px', borderRadius: '30px', backgroundColor: '#055E6C', color: '#CABCB1', padding: '8px', width: '160px' }} 
+                        type="submit"
+
+                    >
                         Proceed
                     </button>
                 </form>
@@ -66,3 +98,4 @@ function LogIn() {
 }
 
 export default LogIn;
+

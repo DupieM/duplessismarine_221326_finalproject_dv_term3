@@ -60,6 +60,10 @@ const CupSchema = mongoose.Schema({
     discount: {
         type: Number,
         required: false
+    },
+    size: {
+        type: String,
+        required: true
     }
 })
 

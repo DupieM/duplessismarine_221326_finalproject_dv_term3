@@ -21,15 +21,16 @@ router.post('/api/auth', async (req, res) => {
 			return res.status(401).send({ message: "Invalid Email or Password" });
 
 		const token = client.generateAuthToken();
-		res.status(200).send({ data: token, message: "logged in successfully" });
+		res.status(200).send({ data: token, message: "Logged in successfully" });
 	} catch (error) {
+		console.log(error)
 		res.status(500).send({ message: "Internal Server Error" });
 	}
 });
 
 const validate = (data) => {
 	const schema = Joi.object({
-		username: Joi.string().username().required().label("Username"),
+		username: Joi.string().required().label("Username"),
 		password: Joi.string().required().label("Password"),
 	});
 	return schema.validate(data);

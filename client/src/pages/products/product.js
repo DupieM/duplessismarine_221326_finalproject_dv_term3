@@ -23,6 +23,26 @@ function Product() {
         window.location = "/single_product";
     };
 
+    const filterSelection1 = (productid) => {
+        localStorage.setItem("cupID", productid)
+        window.location = "/brand_product";
+    };
+
+    const filterSelection2 = (productid) => {
+        localStorage.setItem("cupID", productid)
+        window.location = "/color_product";
+    };
+
+    const filterSelection3 = (productid) => {
+        localStorage.setItem("cupID", productid)
+        window.location = "/price_product";
+    };
+
+    const filterSelection4 = (productid) => {
+        localStorage.setItem("cupID", productid)
+        window.location = "/size_product";
+    };
+
     return (
         <div className="App2">
 
@@ -37,58 +57,51 @@ function Product() {
                 <Accordion.Item eventKey="0" style={{width: '200px', marginBottom: '20px', marginLeft: '20px'}}>
                     <Accordion.Header>Filter by Brand</Accordion.Header>
                     <Accordion.Body>
-                        <ul style={{listStyleType: 'none'}}>
-                            <li>Bodum</li>
-                            <li>Built</li>
-                            <li>Carrol boyes</li>
-                            <li>DeLonghi</li>
-                            <li>Ecoffee Cup</li>
-                            <li>Eva Solo</li>
-                            <li>Joseph Joseph</li>
-                            <li>KeepCup</li>
-                            <li>Kulgo</li>
-                            <li>Le Creuset</li>
-                            <li>Mepal</li>
-                            <li>MiiR</li>
-                            <li>Sengetti</li>
-                            <li>W&P</li>
-                            <li>Zoku</li>
-                        </ul>
-                    </Accordion.Body>
+                        <select >
+                            <option value="Bodum" style={{cursor: 'pointer'}}>Bodum</option>
+                            <option value="" style={{cursor: 'pointer'}}>Built</option>
+                            <option value="" >Carrol boyes</option>
+                            <option value="" >DeLonghi</option>
+                            <option value="" >Ecoffee Cup</option>
+                            <option value="" >Eva Solo</option>
+                            <option value="" >Joseph Joseph</option>
+                            <option value="" >KeepCup</option>
+                            <option value="" >Kulgo</option>
+                            <option value="" >Le Creuset</option>
+                            <option value="" >Mepal</option>
+                            <option value="" >MiiR</option>
+                            <option value="" >Sengetti</option>
+                            <option value="" >W & P</option>
+                            <option value="" >Zoku</option>
+                        </select>
+                    </Accordion.Body>  
                 </Accordion.Item>
                 <Accordion.Item eventKey="1" style={{width: '200px', marginBottom: '20px', marginLeft: '20px'}}>
                     <Accordion.Header>Filter by Prize</Accordion.Header>
                     <Accordion.Body>
-                        <ul style={{listStyleType: 'none'}}>
-                            <li>R100 to R250</li>
-                            <li>R300 to R450</li>
-                            <li>R500 to R650</li>
-                        </ul>
+                        <option value="" onClick={filterSelection3} style={{cursor: 'pointer'}}>R100 to R250</option>
+                        <option value="" >R300 to R450</option>
+                        <option value="" >R500 to R650</option>
                     </Accordion.Body>
                 </Accordion.Item>
                 <Accordion.Item eventKey="2" style={{width: '200px', marginBottom: '20px', marginLeft: '20px'}}>
                     <Accordion.Header>Filter by Size</Accordion.Header>
                     <Accordion.Body>
-                        <ul style={{listStyleType: 'none'}}>
-                            <li>Small</li>
-                            <li>Medium</li>
-                            <li>Large</li>
-                        </ul> 
+                        <option value="" onClick={filterSelection4} style={{cursor: 'pointer'}}>Small</option>
+                        <option value="" >Medium</option>
+                        <option value="" >Large</option> 
                     </Accordion.Body>
                 </Accordion.Item>
                 <Accordion.Item eventKey="3" style={{width: '200px', marginLeft: '20px'}}>
                     <Accordion.Header>Filter by Color</Accordion.Header>
                     <Accordion.Body>
-                        <ul style={{listStyleType: 'none'}}>
-                            <li>Red</li>
-                            <li>Orrange</li>
-                            <li>Yellow</li>
-                            <li>Blue</li>
-                            <li>Green</li>
-                            <li>Pink</li>
-                            <li>Natural</li>
-                            <li>Greys</li>
-                        </ul>
+                        <option value="" onClick={filterSelection2} style={{cursor: 'pointer'}}>Mint</option>
+                        <option value="" >Green</option>
+                        <option value="" >Blue</option>
+                        <option value="" >Pink</option>
+                        <option value="" >White</option>
+                        <option value="" >Grey</option>
+                        <option value="" >Black</option> 
                     </Accordion.Body>
                 </Accordion.Item>
             </Accordion>
@@ -98,13 +111,13 @@ function Product() {
                 {products.map(product => {
                         return (
                                 <Col key={product._id}>
-                                    <Card style={{width: '270px', height: '410px', marginLeft: '28px', marginBottom: '30px', backgroundColor: '#869CAA', textAlign: 'center', padding: '9px'}}>
+                                    <Card style={{width: '270px', height: '430px', marginLeft: '28px', marginBottom: '30px', backgroundColor: '#869CAA', textAlign: 'center', padding: '9px'}}>
                                         <img src={product.img}  alt="cup" style={{width: '250px'}}/>
                                             <Card.Body style={{paddingLeft: "0px", paddingRight: "0px"}}>
                                                 <Card.Title style={{fontSize: '17pt', marginTop: '1px', color: '#0C4654'}}>{product.model}</Card.Title>
                                                 <Card.Text style={{fontSize: '17pt', marginTop: '10px', color: '#0C4654'}}>R {product.price}</Card.Text>
                                             </Card.Body>
-                                            <button onClick={() => handleSingle(product._id)}>
+                                            <button style={{marginBottom: '10px'}} onClick={() => handleSingle(product._id)}>
                                                 View
                                             </button>
                                     </Card>

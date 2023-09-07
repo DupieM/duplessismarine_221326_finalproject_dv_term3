@@ -9,8 +9,11 @@ import LogIn from   './pages/log_in';
 import Form from './pages/form/form';
 import Cart from './pages/cart/cart';
 import Checkout from './pages/cart/checkout';
+import SingUp from './pages/sing_up';
+import BrandProduct from './filter/brand_products';
 import UpdateInventory from './pages/inventory/update_inventory';
 import BasicNavbar from './components/navbar';
+import BasicFooter from './components/footer';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Outlet } from 'react-router';
 
@@ -19,6 +22,7 @@ function App() {
     <div className="App">
       <Routes>
         <Route path="/login" element={<LogIn />} />
+        <Route path="/sing_up" element={<SingUp />} />
         <Route
           element={
             <>
@@ -35,8 +39,10 @@ function App() {
             <Route path='/single_product' element= { <SingleProduct />} />
             <Route path='/cart' element= { <Cart />} />
             <Route path='/checkout' element= { <Checkout />} />
-            <Route path='/update_inventory' element= { <UpdateInventory />} />
+            <Route path='/update_inventory/:id' element= { <UpdateInventory />} />
+            <Route path='/brand_product' element= { <BrandProduct />} />
         </Route>
+        
       </Routes>
     </div>
   );

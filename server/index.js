@@ -8,6 +8,7 @@ const orderRoute = require('./routes/order');
 const authRoutes = require('./routes/auth');
 const newcupRoute = require('./routes/newcups');
 const discupRoute = require('./routes/discountedcups');
+const Client = require('./models/clients')
 
 require('dotenv/config')
 
@@ -27,6 +28,8 @@ app.use(newcupRoute)
 app.use(discupRoute)
 app.use(clientRoute);
 app.use(authRoutes);
+
+
 
 mongoose.connect(process.env.DB_CONNECTION, {
     useNewUrlParser: true,

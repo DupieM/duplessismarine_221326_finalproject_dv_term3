@@ -1,56 +1,47 @@
 import React, { useEffect, useState } from 'react';
-import axios from 'axios'
+import { useNavigate } from 'react-router-dom';
 
 function Cart() {
-
-    const [productModel, setProductModel] = useState();
-    const [productPrice, setProductPrice] = useState();
-
-    const [product, setProducts] = useState([]);
-
-    const caid =  sessionStorage.getItem("cupCID");
+    const [cartItems, setCartItems] = useState([]);
 
     useEffect(() => {
-        let payload = { model: productModel, price: productPrice }
-        axios.get('http://localhost:5000/api/cup/' + caid, payload)
-        .then((res) => {
-            setProducts(res.data)
-            console.log(setProducts)
-        })
-        .catch()
-    });
+        // Retrieve cart items from localStorage
+        const storedCartItems = localStorage.getItem('cartItems');
 
-   return (
-    <div className="App2">
+        if (storedCartItems) {
+        // Parse the stored items from JSON
+        setCartItems(JSON.parse(storedCartItems));
+        }
+    }, []);
 
-        <br/>
+    // Calculate the total price of items in the cart
+    const total = cartItems.reduce((acc, item) => acc + item.price * item.qty, 0);
 
-        <div style={{border: '4px solid black', width: '1300px', marginLeft: '140px'}}>
-        
-            <h1 style={{fontWeight: 'bold', color: '#5C3D4C', fontSize: '30pt'}}>Items in your Cart</h1>
+    const navigate = useNavigate()
 
-            <br/>
+    const handlecheckout = () =>{
+        navigate('/checkout');
+    }
 
-            <h2>{product.model}</h2>
-            <h2>Quantity</h2>
-            <h2>R{product.price}</h2>
-            <h2>{product.model}</h2>
-            <h2>Quantity</h2>
-            <h2>R{product.price}</h2>
-
-
-            <h3>Total:</h3>
-
-            <button>
-                Checkout
-            </button>
-
+    return (
+        <div className="App2">
+        <br />
+        <div style={{ border: '4px solid black', width: '1300px', marginLeft: '140px' }}>
+            <h1 style={{ fontWeight: 'bold', color: '#5C3D4C', fontSize: '30pt' }}>Items in your Cart</h1>
+            <br />
+            {cartItems.map((item) => (
+            <div key={item.id}>
+                <h2>{item.model}</h2>
+                <h2>Quantity: {item.qty}</h2>
+                <h2>R{item.price}</h2>
+            </div>
+            ))}
+            <h3>Total: R{total.toFixed(2)}</h3>
+            <button onClick={handlecheckout}>Checkout</button>
         </div>
-
-        <br/>
-
-    </div>
-   )
+        <br />
+        </div>
+    );
 }
 
 export default Cart;

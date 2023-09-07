@@ -20,7 +20,12 @@ router.delete('/api/order/:id', async (req, res) => {
 
 //Create
 router.post('/api/order', async (req, res) => {
-    const order = new OrderSchema({ ...req.body });
+    const order = new OrderSchema({ 
+        username: req.body.username,
+        model: req.body.model,
+        qty: req.body.qty,
+        price: req.body.price,
+    });
     await order.save()
         .then(response => res.json(response))
         .catch(error => res.status(500).json(error))

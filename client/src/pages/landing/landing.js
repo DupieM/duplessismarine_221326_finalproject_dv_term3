@@ -13,26 +13,64 @@ import React, { useEffect, useState } from 'react';
 
 function Landing() {
 
+    const [timestamp, setTimeStamp] = useState([]);
+
+    useEffect(() => {
+        axios.get('http://localhost:5000/api/cups/')
+        .then((res) => {
+            setTimeStamp(res.data.timestamp)
+        })
+        .catch()
+    });
+
+
     const [products, setProducts] = useState([]);
 
     useEffect(() => {
-        axios.get('http://localhost:5000/api/newcups/')
+        axios.get('http://localhost:5000/api/cups/')
           .then((res) => {
-            setProducts(res.data)
+            let arrayOfnew = [];
+
+            for(let i=0; i < res.data.length;i++) {
+                if (res.data[i].timestamp == timestamp) {
+                    arrayOfnew.push(res.data[i])
+                }
+            }
+
+            console.log(arrayOfnew);
+        
+            setProducts(arrayOfnew)
+
           })
           .catch()
     });
 
-    const [products1, setProducts1] = useState([]);
+    const [product, setProduct] = useState([]);
 
     useEffect(() => {
-        axios.get('http://localhost:5000/api/discups/')
+        axios.get('http://localhost:5000/api/cups/')
           .then((res) => {
-            setProducts1(res.data)
+
+            let arrayOfdis = [];
+
+            for(let i=0; i < res.data.length;i++) {
+                if (res.data[i].discount == 10) {
+                    arrayOfdis.push(res.data[i])
+                }
+            }
+
+            console.log(arrayOfdis);
+           
+            setProduct(arrayOfdis)
           })
           .catch()
     });
 
+
+    const handleSingleDiscount = (productid) => {
+        localStorage.setItem("cupID", productid)
+        window.location = "/single_product";
+    };
 
     return (
         <div className="App">
@@ -125,13 +163,13 @@ function Landing() {
                     {products.map(product => {
                         return (
                             <Col key={product._id}>
-                                <Card style={{width: '270px', height: '410px', marginLeft: '28px', marginBottom: '30px', backgroundColor: '#869CAA', textAlign: 'center', padding: '9px'}}>
+                                <Card style={{width: '270px', height: '430px', marginLeft: '28px', marginBottom: '30px', backgroundColor: '#869CAA', textAlign: 'center', padding: '9px'}}>
                                     <img src={product.img}  alt="cup" style={{width: '250px'}}/>
                                     <Card.Body style={{paddingLeft: "0px", paddingRight: "0px"}}>
                                         <Card.Title style={{fontSize: '17pt', marginTop: '1px', color: '#0C4654'}}>{product.model}</Card.Title>
                                         <Card.Text style={{fontSize: '17pt', marginTop: '10px', color: '#0C4654'}}>R {product.price}</Card.Text>
                                     </Card.Body>
-                                    <button>
+                                    <button style={{marginBottom: '10px'}}>
                                         View
                                     </button>
                                 </Card>  
@@ -149,16 +187,16 @@ function Landing() {
 
             <Container>
                 <Row>
-                    {products1.map(product => {
+                    {product.map(product => {
                         return (
                             <Col key={product._id}>
-                                <Card style={{width: '270px', height: '410px', marginLeft: '28px', marginBottom: '30px', backgroundColor: '#869CAA', textAlign: 'center', padding: '9px'}}>
+                                <Card style={{width: '270px', height: '430px', marginLeft: '28px', marginBottom: '30px', backgroundColor: '#869CAA', textAlign: 'center', padding: '9px'}}>
                                     <img src={product.img}  alt="cup" style={{width: '250px'}}/>
                                     <Card.Body style={{paddingLeft: "0px", paddingRight: "0px"}}>
                                         <Card.Title style={{fontSize: '17pt', marginTop: '1px', color: '#0C4654'}}>{product.model}</Card.Title>
                                         <Card.Text style={{fontSize: '17pt', marginTop: '10px', color: '#0C4654'}}>R {product.price}</Card.Text>
                                     </Card.Body>
-                                    <button>
+                                    <button style={{marginBottom: '10px'}} onClick={() => handleSingleDiscount(product._id)}>
                                         View
                                     </button>
                                 </Card>  

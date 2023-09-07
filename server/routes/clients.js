@@ -1,7 +1,10 @@
-const router = require("express").Router();
-const { Client, validate } = require('../models/clients');
+const express = require('express');
+const router = express();
+const { Client } = require('../models/clients');
 const bcrypt = require("bcrypt");
+const Joi = require("joi");
 
+// Login User
 router.post("/api/clients", async (req, res) => {
 	try {
 		const { error } = validate(req.body);
@@ -22,6 +25,14 @@ router.post("/api/clients", async (req, res) => {
 	} catch (error) {
 		res.status(500).send({ message: "Internal Server Error" });
 	}
+});
+
+// Create
+router.post('/api/client', async (req, res) => {
+    const client = new Client({ ...req.body});
+    await client.save()
+        .then(response => res.json(response))
+        .catch(error => res.status(500).json(error))
 });
 
 module.exports = router
