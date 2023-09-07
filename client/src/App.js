@@ -13,7 +13,6 @@ import SingUp from './pages/sing_up';
 import BrandProduct from './filter/brand_products';
 import UpdateInventory from './pages/inventory/update_inventory';
 import BasicNavbar from './components/navbar';
-import BasicFooter from './components/footer';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Outlet } from 'react-router';
 

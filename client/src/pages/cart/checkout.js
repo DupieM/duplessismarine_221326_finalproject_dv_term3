@@ -1,6 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import Table from 'react-bootstrap/Table';
+import icon3 from './logo1.png';
+import icon4 from './email.png';
+import icon5 from './phone-call.png';
 
 function Checkout() {
         const [cartcheckItems, setCartCheckItems] = useState([]);
@@ -28,7 +31,7 @@ function Checkout() {
     const [itemcartprice, setItemCartPrice] = useState();
     const [itemordernumber, setItemOrder] = useState();
 
-    
+    // Create order
     const addOrder = (e) => {
 
         // setItemCartModel = sessionStorage.getItem("itemmodel");
@@ -53,36 +56,47 @@ function Checkout() {
         between(400000,500000)
     )
 
+    // clear local storage
+    // const handleclear = () =>{
+    //     localStorage.removeItem(cartItems);
+    // }
+
     return (
         <div className="App3">
 
             <br/>
 
-            <div style={{border: '4px solid black', width: '1300px', marginLeft: '140px', marginBottom: '40px'}}>
+            <div style={{border: '4px solid black', width: '1300px', marginLeft: '140px', marginBottom: '49px'}}>
                 <form onSubmit={addOrder}>
                     <div>
-                        <h1 style={{marginLeft: '30px', fontSize: '40pt', fontWeight: 'bold'}}>Checkout</h1>
-                        <h3 style={{marginLeft: '30px', fontSize: '26pt', textDecoration: 'underline'}}>Shipping Details:</h3>
-                        <input type="text" placeholder="Address 1"/><br/>
-                        <input type="text" placeholder="Adress 2"/><br/>
-                        <input type="text" placeholder="City"/><br/>
-                        <input type="text" placeholder="province"/><br/>
-
-                        <label>Please enter username again for order</label><br/>
-                        <input type="text" placeholder="username" onChange={(e => setItemUsername(e.target.value))}/>
+                        <h1 style={{marginLeft: '30px', fontSize: '40pt', fontWeight: 'bold', color: '#09333E'}}>Checkout</h1>
+                        <h3 style={{marginLeft: '30px', fontSize: '26pt', textDecoration: 'underline', color: '#09333E'}}>Shipping Details:</h3>
+                        <div style={{marginLeft: '30px'}}>
+                            <input type="text" placeholder="Address 1"/><br/>
+                            <input type="text" placeholder="Adress 2"/><br/>
+                            <input type="text" placeholder="City"/><br/>
+                            <input type="text" placeholder="province"/><br/>
+                        </div>
+                        
+                        <div style={{marginLeft: '30px', marginTop: '10px'}}>
+                            <label>Please enter username again for order</label><br/>
+                            <input type="text" placeholder="username" onChange={(e => setItemUsername(e.target.value))}/>
+                        </div>
 
                         <br/>
                         <br/>
 
-                        <h3 style={{marginLeft: '30px', fontSize: '26pt', textDecoration: 'underline'}}>Payment Details:</h3>
-                        <input type="number" placeholder="Card number"/><br/>
-                        <input type="text" placeholder="Name on Card"/><br/>
-                        <input type="date" placeholder="expiray date"/><br/>
-                        <input type="number" placeholder="Security Code"/>
+                        <h3 style={{marginLeft: '30px', fontSize: '26pt', textDecoration: 'underline', color: '#09333E'}}>Payment Details:</h3>
+                        <div style={{marginLeft: '30px'}}>
+                            <input type="number" placeholder="Card number"/><br/>
+                            <input type="text" placeholder="Name on Card"/><br/>
+                            <input type="date" placeholder="expiray date"/><br/>
+                            <input type="number" placeholder="Security Code"/>
+                        </div>
                     </div>
                     
                     <div style={{marginLeft: '600px', marginTop: '-410px', marginRight: '30px'}}>
-                        <h3 style={{marginLeft: '30px', fontSize: '26pt', textDecoration: 'underline'}}>Your Order:</h3>
+                        <h3 style={{marginLeft: '30px', fontSize: '26pt', textDecoration: 'underline', color: '#09333E'}}>Your Order:</h3>
 
                         {cartcheckItems.map((item) => (
                             // sessionStorage.setItem("itemmodel", item.model),
@@ -107,13 +121,18 @@ function Checkout() {
                             </div>
                         ))}
 
-                        <div style={{}}>
+                        <div style={{marginLeft: '430px', color: '#09333E'}}>
                             <h3>Subtotal: R{total.toFixed(0)}</h3>
                             <h3>Shipping: R50</h3>
                             <h3>Total: R{total1.toFixed(0)}</h3>
                         </div>
                         
-                        <button>Create Order</button>
+                        <button 
+                            style={{ border: 'none', fontSize: '20pt', marginTop: '10px', fontWeight: 'bold', 
+                            borderRadius: '30px', backgroundColor: '#055E6C', color: '#CABCB1', padding: '8px', width: '230px' }}
+                        >
+                            Create Order
+                        </button>
                         
                     </div>
                     <br/>
@@ -123,6 +142,24 @@ function Checkout() {
 
             <br/>
 
+            <footer>
+                <div class="" style={{backgroundColor: '#869CAA', color: '#0C4654', padding: '5px'}}>
+                    <img src={icon3} style={{width: '6%',marginRight: "-50px", marginBottom: '9px', marginTop: '20px', marginLeft: '100px'}}/>
+                </div>
+                <div class="" style={{backgroundColor: '#869CAA', color: '#0C4654', padding: '5px', textAlign: 'center', marginTop: '-90px'}}>
+                    <p>
+                        <img src={icon4} style={{width: '2%', marginRight: '10px'}}/>
+                        otg.cups@gmail.com
+                    </p>
+                    <p>
+                        <img src={icon5} style={{width: '2%', marginRight: '10px'}}/>
+                        + 01 234 567 88
+                    </p>
+                </div>
+                <div class="" style={{backgroundColor: '#869CAA', color: '#0C4654', padding: '5px', textAlign: 'right', marginTop: '-70px', marginRight: '80px'}}>
+                    <h6 class="text-uppercase fw-bold mb-4">© 2023 Copyright: On The Go</h6>
+                </div>
+            </footer>
         </div>
     )
 }
