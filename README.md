@@ -1,3 +1,36 @@
+<!-- Name, Number, Subject and Term -->
+<h5 align="center" style="padding:0;margin:0;">Mariné du Plessis</h5>
+<h5 align="center" style="padding:0;margin:0;">Student Number: 221326</h5>
+<h6 align="center">DV200 | Term 3</h6>
+
+</br>
+
+<p align="center">
+
+  <a href="https://github.com/DupieM/DuPlessisMarine_221326_Final_Project">
+    <img src="client/src/pages/cart/logo1.png" width="200px">
+  </a>
+
+<h3 align="center">On The Go</h3>
+
+  <p align="center">
+    This is an e-commerce website where MongoDB was used as a databse to handle orders, users and products.<br>
+
+   <br />
+   <br />
+    ·
+    <a href="https://github.com/DupieM/DuPlessisMarine_221326_Final_Project/issues">Report Bug</a>
+    ·
+    <a href="https://github.com/DupieM/DuPlessisMarine_221326_Final_Project/issues">Request Feature</a>
+</p>
+
+
+
+
+
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

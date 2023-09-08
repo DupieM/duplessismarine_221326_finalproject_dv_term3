@@ -79,13 +79,17 @@ function LogIn() {
                     </label>
                     <h6 style={{ width: '340px' }}>Forgot Password?</h6>
 
-                    <Link to={`/sing_up`}>
-                        Sing Up
+                    <h4 style={{marginLeft: '102px', marginTop: '14px'}}>OR</h4>
+
+                    <Link to={`/sing_up`} style={{marginLeft: '87px', textDecoration: 'none', color: '#09333E', fontWeight: 'bold', fontSize: '15pt'}}>
+                        Sign Up
                     </Link>
 
-                   
+                    <br/>
+                    <br/>
+
                     <button 
-                        style={{ border: 'none', fontSize: '20pt', marginTop: '12px', fontWeight: 'bold', marginBottom: '197px', borderRadius: '30px', backgroundColor: '#055E6C', color: '#CABCB1', padding: '8px', width: '160px' }} 
+                        style={{marginLeft: '45px', border: 'none', fontSize: '20pt', marginTop: '12px', fontWeight: 'bold', marginBottom: '197px', borderRadius: '30px', backgroundColor: '#055E6C', color: '#CABCB1', padding: '8px', width: '160px' }} 
                         type="submit"
 
                     >

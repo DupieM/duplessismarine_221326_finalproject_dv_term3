@@ -7,9 +7,11 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import {Container, Row, Col} from "react-bootstrap";
 import { Card, CarouselItem } from "react-bootstrap";
 import { Carousel } from "react-bootstrap";
-import PropductCard from "../products/product_card";
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
+import icon5 from './logo1.png';
+import icon6 from './email.png';
+import icon7 from './phone-call.png';
 
 function Landing() {
 
@@ -74,6 +76,7 @@ function Landing() {
 
     return (
         <div className="App">
+            
              <Carousel style={{width: '1550px', height: '630px', marginTop: '30px', textAlign: 'center'}}>
                 <CarouselItem>
                     <Card style={{width: '93%', marginLeft: '4.5%', backgroundColor: '#869CAA', height: '620px'}}>
@@ -207,6 +210,26 @@ function Landing() {
             </Container>
 
             <br/>
+
+            <footer>
+                <div class="" style={{backgroundColor: '#869CAA', color: '#0C4654', padding: '5px'}}>
+                    <img src={icon5} style={{width: '6%',marginRight: "0px", marginBottom: '9px', marginTop: '20px', marginLeft: '-1200px'}}/>
+                </div>
+                <div class="" style={{backgroundColor: '#869CAA', color: '#0C4654', padding: '5px', textAlign: 'center', marginTop: '-90px'}}>
+                    <p>
+                        <img src={icon6} style={{width: '2%', marginRight: '10px'}}/>
+                        otg.cups@gmail.com
+                    </p>
+                    <p>
+                        <img src={icon7} style={{width: '2%', marginRight: '10px'}}/>
+                        + 01 234 567 88
+                    </p>
+                </div>
+                <div class="" style={{backgroundColor: '#869CAA', color: '#0C4654', padding: '5px', textAlign: 'right', marginTop: '-70px', marginRight: '80px'}}>
+                    <h6 class="text-uppercase fw-bold mb-4">© 2023 Copyright: On The Go</h6>
+                </div>
+            </footer>
+
         </div>
 
     )

@@ -66,7 +66,7 @@ function Checkout() {
 
             <br/>
 
-            <div style={{border: '4px solid black', width: '1300px', marginLeft: '140px', marginBottom: '49px'}}>
+            <div style={{border: '4px solid black', width: '1300px', marginLeft: '140px', marginBottom: '85px'}}>
                 <form onSubmit={addOrder}>
                     <div>
                         <h1 style={{marginLeft: '30px', fontSize: '40pt', fontWeight: 'bold', color: '#09333E'}}>Checkout</h1>
@@ -78,24 +78,24 @@ function Checkout() {
                             <input type="text" placeholder="province"/><br/>
                         </div>
                         
-                        <div style={{marginLeft: '30px', marginTop: '10px'}}>
+                        <div style={{marginLeft: '30px', marginTop: '10px', marginBottom: '10px'}}>
                             <label>Please enter username again for order</label><br/>
                             <input type="text" placeholder="username" onChange={(e => setItemUsername(e.target.value))}/>
                         </div>
-
-                        <br/>
-                        <br/>
 
                         <h3 style={{marginLeft: '30px', fontSize: '26pt', textDecoration: 'underline', color: '#09333E'}}>Payment Details:</h3>
                         <div style={{marginLeft: '30px'}}>
                             <input type="number" placeholder="Card number"/><br/>
                             <input type="text" placeholder="Name on Card"/><br/>
                             <input type="date" placeholder="expiray date"/><br/>
-                            <input type="number" placeholder="Security Code"/>
+                            <input type="number" placeholder="Security Code"/><br/>
+                            <br/>
+
+                            <button >Make Payment</button>
                         </div>
                     </div>
                     
-                    <div style={{marginLeft: '600px', marginTop: '-410px', marginRight: '30px'}}>
+                    <div style={{marginLeft: '600px', marginTop: '-460px', marginRight: '30px'}}>
                         <h3 style={{marginLeft: '30px', fontSize: '26pt', textDecoration: 'underline', color: '#09333E'}}>Your Order:</h3>
 
                         {cartcheckItems.map((item) => (

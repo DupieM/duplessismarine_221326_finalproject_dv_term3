@@ -3,10 +3,16 @@ import Table from 'react-bootstrap/Table';
 import icon from './dustbin (2).png';
 import icon2 from './edit.png';
 import icon3 from './add.png';
+import icon4 from './logo1.png';
+import icon5 from './email.png';
+import icon6 from './phone-call.png';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 
 function Inventory() {
+
+    // see if the user or admin is logged in
+
 
     const [products, setProducts] = useState([]);
 
@@ -104,6 +110,25 @@ function Inventory() {
         </div>
 
         <br/>
+
+        <footer>
+                <div class="" style={{backgroundColor: '#869CAA', color: '#0C4654', padding: '5px'}}>
+                    <img src={icon4} style={{width: '6%',marginRight: "0px", marginBottom: '9px', marginTop: '20px', marginLeft: '-1200px'}}/>
+                </div>
+                <div class="" style={{backgroundColor: '#869CAA', color: '#0C4654', padding: '5px', textAlign: 'center', marginTop: '-90px'}}>
+                    <p>
+                        <img src={icon5} style={{width: '2%', marginRight: '10px'}}/>
+                        otg.cups@gmail.com
+                    </p>
+                    <p>
+                        <img src={icon6} style={{width: '2%', marginRight: '10px'}}/>
+                        + 01 234 567 88
+                    </p>
+                </div>
+                <div class="" style={{backgroundColor: '#869CAA', color: '#0C4654', padding: '5px', textAlign: 'right', marginTop: '-70px', marginRight: '80px'}}>
+                    <h6 class="text-uppercase fw-bold mb-4">© 2023 Copyright: On The Go</h6>
+                </div>
+            </footer>
 
         </div>
     )

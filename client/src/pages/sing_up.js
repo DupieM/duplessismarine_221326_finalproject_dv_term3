@@ -69,11 +69,16 @@ function SingUp() {
                         style={{ width: '250px', border: '2px solid #215273', fontSize: '12pt' }}
                     />
 
-                     <Link to={`/login`}>
+                    <h4 style={{marginLeft: '102px', marginTop: '14px'}}>OR</h4>
+
+                    <Link to={`/login`} style={{marginLeft: '92px', textDecoration: 'none', color: '#09333E', fontWeight: 'bold', fontSize: '15pt'}}>
                         Log In
                     </Link>
 
-                    <button style={{ border: 'none', fontSize: '20pt', marginTop: '12px', fontWeight: 'bold', marginBottom: '197px', borderRadius: '30px', backgroundColor: '#055E6C', color: '#CABCB1', padding: '8px', width: '160px' }} type="submit">
+                    <br/>
+                    <br/>
+
+                    <button style={{marginLeft: '40px', border: 'none', fontSize: '20pt', marginTop: '12px', fontWeight: 'bold', marginBottom: '197px', borderRadius: '30px', backgroundColor: '#055E6C', color: '#CABCB1', padding: '8px', width: '160px' }} type="submit">
                         Sing Up
                     </button>
                 </form>

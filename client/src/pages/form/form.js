@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
-
+import icon3 from './logo1.png';
+import icon4 from './email.png';
+import icon5 from './phone-call.png';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 
@@ -38,86 +40,114 @@ function Form() {
 
   return (
 
-    <div style={{ border: "2px black solid", margin: 'auto', borderRadius: '5px', width: "50%" }} className="container">
-      <form onSubmit={addProduct}>
-        <div className="form">
-          <h1 style={{ color: "black" }} >Products</h1>
-          <div >
-            <input style={style}
-              type="text"
-              placeholder="Make"
-              onChange={(e => setProductMake(e.target.value))}
-            />
-            <input style={style}
-              type="text"
-              placeholder="Model"
-              onChange={(e => setProductModel(e.target.value))}
-            />
-            <input style={style}
-              type="number"
-              placeholder="Price"
-              onChange={(e => setProductPrice(e.target.value))}
-            />
-            <input style={style}
-              type="number"
-              placeholder="Quantity"
-              onChange={(e => setProductQuantity(e.target.value))}
-            />
-            <input style={style}
+    <div className="App2">
+
+      <br/>
+
+      <div style={{ border: "2px black solid", margin: 'auto', borderRadius: '5px', width: "50%" }} className="container">
+        <form onSubmit={addProduct}>
+          <div className="form">
+            <h1 style={{ color: "black" }} >Products</h1>
+            <div >
+              <input style={style}
+                type="text"
+                placeholder="Make"
+                onChange={(e => setProductMake(e.target.value))}
+              />
+              <input style={style}
+                type="text"
+                placeholder="Model"
+                onChange={(e => setProductModel(e.target.value))}
+              />
+              <input style={style}
                 type="number"
-                placeholder="Capacity"
-                onChange={(e => setProductCapacity(e.target.value))}
-            />
-            <input style={style}
-              type="text"
-              placeholder="Product Code"
-              onChange={(e => setProductProducode(e.target.value))}
-            />
-            <input style={style}
-              type="url"
-              placeholder="Image link"
-              onChange={(e => setProductImg(e.target.value))}
-            />
-            <input style={style}
-              type="text"
-              placeholder="Color 1"
-              onChange={(e => setProductColorimg1(e.target.value))}
-            />
-            <input style={style}
-              type="text"
-              placeholder="Color 2"
-              onChange={(e => setProductColorimg2(e.target.value))}
-            />
-            <input style={style}
-              type="text"
-              placeholder="Color 3"
-              onChange={(e => setProductColorimg3(e.target.value))}
-            />
-            <input style={style}
-              type="text"
-              placeholder="Color 4"
-              onChange={(e => setProductColorimg4(e.target.value))}
-            />
-            <input style={style}
-              type="text"
-              placeholder="Size"
-              onChange={(e => setProductSize(e.target.value))}
-            />
-            <input style={style}
-              type="text"
-              placeholder="Description"
-              onChange={(e => setProductDescription(e.target.value))}
-            />
-            <input style={style}
-              type="text"
-              placeholder="Care Instructions"
-              onChange={(e => setProductCareinstructions(e.target.value))}
-            />
-            <button type='submit' style={style}>Add Product</button>
+                placeholder="Price"
+                onChange={(e => setProductPrice(e.target.value))}
+              />
+              <input style={style}
+                type="number"
+                placeholder="Quantity"
+                onChange={(e => setProductQuantity(e.target.value))}
+              />
+              <input style={style}
+                  type="number"
+                  placeholder="Capacity"
+                  onChange={(e => setProductCapacity(e.target.value))}
+              />
+              <input style={style}
+                type="text"
+                placeholder="Product Code"
+                onChange={(e => setProductProducode(e.target.value))}
+              />
+              <input style={style}
+                type="url"
+                placeholder="Image link"
+                onChange={(e => setProductImg(e.target.value))}
+              />
+              <input style={style}
+                type="text"
+                placeholder="Color 1"
+                onChange={(e => setProductColorimg1(e.target.value))}
+              />
+              <input style={style}
+                type="text"
+                placeholder="Color 2"
+                onChange={(e => setProductColorimg2(e.target.value))}
+              />
+              <input style={style}
+                type="text"
+                placeholder="Color 3"
+                onChange={(e => setProductColorimg3(e.target.value))}
+              />
+              <input style={style}
+                type="text"
+                placeholder="Color 4"
+                onChange={(e => setProductColorimg4(e.target.value))}
+              />
+              <input style={style}
+                type="text"
+                placeholder="Size"
+                onChange={(e => setProductSize(e.target.value))}
+              />
+              <input style={style}
+                type="text"
+                placeholder="Description"
+                onChange={(e => setProductDescription(e.target.value))}
+              />
+              <input style={style}
+                type="text"
+                placeholder="Care Instructions"
+                onChange={(e => setProductCareinstructions(e.target.value))}
+              />
+              <button type='submit' style={style}>Add Product</button>
+            </div>
           </div>
+        </form>
+      </div>
+
+      <br/>
+
+      <footer>
+        <div class="" style={{backgroundColor: '#869CAA', color: '#0C4654', padding: '5px'}}>
+            <img src={icon3} style={{width: '6%',marginRight: "0px", marginBottom: '9px', marginTop: '20px', marginLeft: '-1200px'}}/>
         </div>
-      </form>
+        <div class="" style={{backgroundColor: '#869CAA', color: '#0C4654', padding: '5px', textAlign: 'center', marginTop: '-90px'}}>
+            <p>
+                <img src={icon4} style={{width: '2%', marginRight: '10px'}}/>
+                otg.cups@gmail.com
+            </p>
+            <p>
+                <img src={icon5} style={{width: '2%', marginRight: '10px'}}/>
+                + 01 234 567 88
+            </p>
+        </div>
+        <div class="" style={{backgroundColor: '#869CAA', color: '#0C4654', padding: '5px', textAlign: 'right', marginTop: '-70px', marginRight: '80px'}}>
+            <h6 class="text-uppercase fw-bold mb-4">© 2023 Copyright: On The Go</h6>
+        </div>
+      </footer>
+      
     </div>
+
   );
 }
 
