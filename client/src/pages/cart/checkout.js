@@ -44,7 +44,7 @@ function Checkout() {
         .then()
         .catch()
 
-        navigate('/cart');
+        navigate('/product');
 
     };
 
