@@ -12,7 +12,9 @@ function Product() {
 
     const [products, setProducts] = useState([]);
     const [product, setProduct] = useState([]);
+    
 
+    // get al the cups form databasis
     useEffect(() => {
         axios.get('http://localhost:5000/api/cups/')
           .then((res) => {
@@ -21,32 +23,11 @@ function Product() {
           .catch()
     });
 
+    // Navigate to single product page
     const handleSingle = (productid) => {
         localStorage.setItem("cupID", productid)
         window.location = "/single_product";
     };
-
-    // const filterSelection1 = (productid) => {
-    //     localStorage.setItem("cupID", productid)
-    //     window.location = "/brand_product";
-    // };
-
-    // const filterSelection2 = (productid) => {
-    //     localStorage.setItem("cupID", productid)
-    //     window.location = "/color_product";
-    // };
-
-    // const filterSelection3 = (productid) => {
-    //     localStorage.setItem("cupID", productid)
-    //     window.location = "/price_product";
-    // };
-
-    // const filterSelection4 = (productid) => {
-    //     localStorage.setItem("cupID", productid)
-    //     window.location = "/size_product";
-    // };
-
-
 
     return (
         <div className="App2">
@@ -58,6 +39,8 @@ function Product() {
             <br/>
             <br/>
 
+            {/* The Filtering of the product set does not output on a static page as the selection is 
+            replace by full product page I believe this can be fixed by the show and hide function*/}
             <Accordion style={{}}>
                 <Accordion.Item eventKey="0" style={{width: '200px', marginBottom: '20px', marginLeft: '20px'}}>
                     <Accordion.Header>Filter by Brand</Accordion.Header>
@@ -193,7 +176,7 @@ function Product() {
 
             <Container style={{marginLeft: '216px', marginTop: '-270px', marginBottom: '48px'}}>
                 <Row>
-                {products.map(product => {
+                    {products.map(product => {
                         return (
                             <Col key={product._id}>
                                 <Card style={{width: '270px', height: '430px', marginLeft: '28px', marginBottom: '30px', backgroundColor: '#869CAA', textAlign: 'center', padding: '9px'}}>
@@ -209,7 +192,7 @@ function Product() {
                                 
                             </Col>
                         )
-                        })}
+                    })}
                 </Row>
             </Container>
 

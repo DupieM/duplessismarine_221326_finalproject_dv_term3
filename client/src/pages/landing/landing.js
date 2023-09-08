@@ -16,28 +16,24 @@ import icon7 from './phone-call.png';
 function Landing() {
 
     // Get products that is newly added
-    const [timestamp, setTimeStamp] = useState([]);
-
-    useEffect(() => {
-        axios.get('http://localhost:5000/api/cups/')
-        .then((res) => {
-            setTimeStamp(res.data.timestamp)
-        })
-        .catch()
-        console.log(setTimeStamp);
-    });
-
-
     const [products, setProducts] = useState([]);
 
     useEffect(() => {
         axios.get('http://localhost:5000/api/cups/')
           .then((res) => {
             
+            //sort data by timestamp
+        //     const sortProperty = types[timestamp];
+            //     const sorted = setproducts.sort((a, b) => b[sortProperty] - a[sortProperty]);
+            //     console.log(sorted);
+            //     setProducts(sorted);
+        //      };
+            
+
             let arrayOfnew = [];
 
-            for(let i=0; i < res.data.length; 10) {
-                if (res.data[i].timestamp == timestamp) {
+            for(let i=0; i < 12; i++) {
+                if (res.data[i]) {
                     arrayOfnew.push(res.data[i])
                 }
             }
@@ -50,7 +46,35 @@ function Landing() {
           .catch()
     });
 
+    //
+    // const [products, setProducts] = useState([]);
+
+    // useEffect(() => {
+    //     axios.get('http://localhost:5000/api/cups/')
+    //       .then((res) => {
+            
+    //         // var date = Date('2023-09-07T09:58:55.000+00:00');
+
+    //         let arrayOfnew = [];
+
+    //         for(let i=0; i < 10; i++) {
+    //             if (res.data[i].timestamp == date) {
+    //                 arrayOfnew.push(res.data[i])
+    //             }
+    //         }
+
+    //         console.log(arrayOfnew);
+        
+    //         setProducts(arrayOfnew)
+
+    //       })
+    //       .catch()
+    // });
+
+
+
     // Get products that is discounted
+    
     const [product, setProduct] = useState([]);
 
     useEffect(() => {
@@ -72,12 +96,13 @@ function Landing() {
           .catch()
     });
 
-
+    // Navigate to single product page
     const handleSingleDiscount = (productid) => {
         localStorage.setItem("cupID", productid)
         window.location = "/single_product";
     };
 
+    // Navigate to products page when clicking on any category
     const handleproducts = () => {
         window.location = "/product";
     };

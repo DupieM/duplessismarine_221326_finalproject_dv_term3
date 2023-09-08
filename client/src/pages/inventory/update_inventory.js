@@ -81,7 +81,7 @@ function UpdateInventory() {
     useEffect(() => {
         axios.get('http://localhost:5000/api/cup/' + id)
         .then(res => {
-            setValues({...values, make: res.data.make, price: res.data.price, img: res.data.img, model: res.data.model, quantity: res.data.quantity, disccount: res.data.disccount,})
+            setValues({...values, make: res.data.make, price: res.data.price, img: res.data.img, model: res.data.model, quantity: res.data.quantity, discount: res.data.discount,})
             console.log(res.data);
         })
         .catch(res => console.log(res))
@@ -89,9 +89,9 @@ function UpdateInventory() {
 
     const navigate = useNavigate()
 
-    // const prodid = sessionStorage.getItem("pid");
+    // const prodid = localStorage.getItem("pid");
 
-
+    // put the updated version in database
     const handleSubmit = (e) => {
         e.preventDefault();
         axios.put('http://localhost:5000/api/updatecup/' + values.id, values)

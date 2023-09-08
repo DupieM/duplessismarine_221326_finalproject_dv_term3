@@ -233,7 +233,7 @@ function Inventory() {
                                 </th>
                                 <th style={{border: '3px solid #055E6C', backgroundColor: '#869CAA', paddingTop: '50px'}}>
                                     <Link to={`/update_inventory/${product._id}`}>
-                                        {sessionStorage.setItem("pid", product._id)}
+                                        {/* {localStorage.setItem("pid", product._id)} */}
                                         <img src={icon2}  alt="travel mug" style={{height: '38px', cursor: 'pointer'}}/>
                                     </Link>
                                     {/* <img src={icon2}  alt="travel mug" style={{height: '38px', cursor: 'pointer'}} onClick={()=>handleUpdate(product._id)}/> */}

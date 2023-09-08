@@ -19,36 +19,12 @@ router.get('/api/cup/:id', async (req, res) => {
 
 //Update
 router.put('/api/updatecup/:id', async (req, res) => {
-    // console.log(req.body);
-    // // let stock = +req.body.varOne + +req.body.varTwo + +req.body.varThree;
-
-    // const findProduct = await CupSchema.updateOne(
-    //     {_id: req.params.id},
-    //     {Sset: {
-    //         make: req.body.make, 
-    //         model: req.body.model, 
-    //         price: req.body.price, 
-    //         quantity: req.body.quantity,
-    //         capacity: req.body.capacity, 
-    //         img: req.body.img, 
-    //         product_code: req.body.product_code, 
-    //         color_img1: req.body.color_img1, 
-    //         color_img2: req.body.color_img2, 
-    //         color_img3: req.body.color_img3, 
-    //         color_img4: req.body.color_img4, 
-    //         description: req.body.description, 
-    //         care_instructions: req.body.care_instructions, 
-    //         timestamp: req.body.timestamp, 
-    //         discount: req.body.discount, 
-    //     }}
-    // );
-    // res.json(findProduct);
-
-    const { id } = req.params.id
-    await CupSchema.updateOne({id} , req.body)
+    const { id } = req.params; // Corrected destructuring
+    await CupSchema.updateOne({ _id: id }, req.body) // Use _id for MongoDB ObjectId
         .then(response => res.json(response))
-        .catch(error => res.status(500).json(error))
+        .catch(error => res.status(500).json(error));
 });
+
 
 //Delete
 router.delete('/api/cup/:id', async (req, res) => {

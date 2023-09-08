@@ -38,7 +38,7 @@ function SingUp() {
             <img src={icon4} alt="logo" style={{ width: '280px', marginTop: '-520px', marginLeft: '240px' }} />
             <img src={loginimg} alt="travel mug" style={{ width: '560px', height: '780px', marginTop: '50px', marginLeft: ' 240px' }} />
             <div style={{ marginTop: '10px', marginLeft: '390px', textAlign: 'left', marginTop: '-520px' }}>
-                <h1 style={{ fontWeight: 'bold', fontSize: '40pt', textDecoration: 'underline', textAlign: 'left', marginBottom: '20px', color: '#0F2F48' }}>Sing Up</h1>
+                <h1 style={{ fontWeight: 'bold', fontSize: '40pt', textDecoration: 'underline', textAlign: 'left', marginBottom: '20px', color: '#0F2F48' }}>Sign Up</h1>
                 <form style={{ width: '280px' }} onSubmit={addClient}>
                     <label style={{ fontWeight: 'bold', fontSize: '20pt', color: '#0F2F48' }}>Email:</label>
                     <input
@@ -79,7 +79,7 @@ function SingUp() {
                     <br/>
 
                     <button style={{marginLeft: '40px', border: 'none', fontSize: '20pt', marginTop: '12px', fontWeight: 'bold', marginBottom: '197px', borderRadius: '30px', backgroundColor: '#055E6C', color: '#CABCB1', padding: '8px', width: '160px' }} type="submit">
-                        Sing Up
+                        Sign Up
                     </button>
                 </form>
             </div>
