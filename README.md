@@ -164,18 +164,19 @@ Another challenge was to display data based on a selection like the categories o
 Adding success and failure messages right through the application.
 Enabling the JWT Authentication.
 Adding a number to the cart icon in the header when there is something in the cart already.
+To add more comments in my code to explain functionality.
 
 ## Final Outcome
 
 ### Mockups
 
-![image1](Mockups&Wireframes/mockups/Mockup1.jpg)
-![image2](Mockups&Wireframes/mockups/Mockup2.jpg)
-![image3](Mockups&Wireframes/mockups/Mockup3.jpg)
-![image4](Mockups&Wireframes/mockups/Mockup4.jpg)
-![image5](Mockups&Wireframes/mockups/Mockup5.jpg)
-![image6](Mockups&Wireframes/mockups/Mockup6.jpg)
-![image7](Mockups&Wireframes/mockups/Mockup7.jpg)
+![image1](Mockups&Wireframes/mockups/Mockup3.jpg)
+![image2](Mockups&Wireframes/mockups/Mockup5.jpg)
+![image3](Mockups&Wireframes/mockups/Mockup7.jpg)
+![image4](Mockups&Wireframes/mockups/Mockup6.jpg)
+![image5](Mockups&Wireframes/mockups/Mockup2.jpg)
+![image6](Mockups&Wireframes/mockups/Mockup1.jpg)
+![image7](Mockups&Wireframes/mockups/Mockup4.jpg)
 
 <br>
 
