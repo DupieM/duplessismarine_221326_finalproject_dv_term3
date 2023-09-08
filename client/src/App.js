@@ -10,7 +10,6 @@ import Form from './pages/form/form';
 import Cart from './pages/cart/cart';
 import Checkout from './pages/cart/checkout';
 import SingUp from './pages/sing_up';
-import BrandProduct from './filter/brand_products';
 import UpdateInventory from './pages/inventory/update_inventory';
 import BasicNavbar from './components/navbar';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -39,7 +38,6 @@ function App() {
             <Route path='/cart' element= { <Cart />} />
             <Route path='/checkout' element= { <Checkout />} />
             <Route path='/update_inventory/:id' element= { <UpdateInventory />} />
-            <Route path='/brand_product' element= { <BrandProduct />} />
         </Route>
         
       </Routes>

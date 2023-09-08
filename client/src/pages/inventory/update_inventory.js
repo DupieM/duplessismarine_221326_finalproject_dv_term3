@@ -1,6 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import Table from 'react-bootstrap/Table';
 import icon from './save(2).png';
+import icon3 from './logo1.png';
+import icon4 from './email.png';
+import icon5 from './phone-call.png';
 import axios from 'axios';
 import { useNavigate, useParams } from 'react-router-dom';
 
@@ -86,11 +89,12 @@ function UpdateInventory() {
 
     const navigate = useNavigate()
 
-    const prodid = sessionStorage.getItem("pid");
+    // const prodid = sessionStorage.getItem("pid");
+
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        axios.put('http://localhost:5000/api/updatecup/' + prodid, values)
+        axios.put('http://localhost:5000/api/updatecup/' + values.id, values)
         .then(res => {
             navigate('/inventory');
         })
@@ -103,49 +107,58 @@ function UpdateInventory() {
 
             <br/>
 
-            <h2 style={{fontWeight: 'bold', color: '#5C3D4C', fontSize: '30pt'}}>Update Inventory</h2>
+            <h2 style={{fontWeight: 'bold', color: '#5C3D4C', fontSize: '30pt', textAlign: 'center'}}>Update Inventory</h2>
 
-            <div style={{marginTop: '40px', marginLeft: '40px', marginRight: '40px'}}>
+            <br/>
+
+            <div style={{marginTop: '20px', marginLeft: '40px', marginRight: '40px'}}>
+
+                <img src={values.img}  alt="travel mug" style={{height: '500px', marginLeft: '-510px'}}/><br/>
+
                 <form onSubmit={handleSubmit}>
                     <div className="form">
-                        <h1 style={{ color: "black" }} >Update Product</h1>
-                        <div>
-                            <img src={values.img}  alt="travel mug" style={{height: '120px'}}/>
-                            <label>Product make</label>      
+                        <div style={{border: '2px solid #09333E', padding: '10px', width: '400px', textAlign: 'center', marginLeft: '780px', marginTop: '-455px', marginBottom: '96px'}}>
+                            
+                            <label>Product make</label> <br/>     
                             <input 
                                 type="text"
                                 placeholder="model"
                                 value={values.make}
                                 onChange={e => setValues({...values, make: e.target.value})}
-                            />
-                            <label>Product modal</label>      
+                                style={{fontSize: '13pt', padding: '5px', borderRadius: '5px', border: 'none', color: '#09333E', backgroundColor: '#BDD4E2', marginBottom: '9px', width: '110px'}}
+                            /><br/>
+                            <label>Product model</label>  <br/>    
                             <input 
                                 type="text"
                                 placeholder="model"
                                 value={values.model}
                                 onChange={e => setValues({...values, model: e.target.value})}
-                            />
-                            <label>Prize</label>
+                                style={{fontSize: '13pt', padding: '5px', borderRadius: '5px', border: 'none', color: '#09333E', backgroundColor: '#BDD4E2', marginBottom: '9px', width: '340px'}}
+                            /><br/>
+                            <label>Prize</label><br/>
                             <input
                                 type="number"
                                 placeholder="price"
                                 value={values.price}
                                 onChange={e => setValues({...values, price: e.target.value})}
-                            />
-                            <label> Quantity</label>
+                                style={{fontSize: '13pt', padding: '5px', borderRadius: '5px', border: 'none', color: '#09333E', backgroundColor: '#BDD4E2', marginBottom: '9px', width: '60px'}}
+                            /><br/>
+                            <label> Quantity</label><br/>
                             <input 
                                 type="number"
                                 placeholder="quantity"
                                 value={values.quantity}
                                 onChange={e => setValues({...values, quantity: e.target.value})}
-                            />
-                            <label> Discount</label>
+                                style={{fontSize: '13pt', padding: '5px', borderRadius: '5px', border: 'none', color: '#09333E', backgroundColor: '#BDD4E2', marginBottom: '9px', width: '40px'}}
+                            /><br/>
+                            <label> Discount</label><br/>
                             <input
                                 type="number"
                                 placeholder="discount"
                                 value={values.discount}
                                 onChange={e => setValues({...values, discount: e.target.value})}
-                            />
+                                style={{fontSize: '13pt', padding: '5px', borderRadius: '5px', border: 'none', color: '#09333E', backgroundColor: '#BDD4E2', marginBottom: '9px', width: '86px'}}
+                            /><br/>
 
                             <button type="submit" style={{backgroundColor: '#6298A4', border: 'none'}}>
                                 <img src={icon}  alt="travel mug" style={{height: '38px', cursor: 'pointer'}}/>
@@ -158,6 +171,25 @@ function UpdateInventory() {
             </div>
 
             <br/>
+
+            <footer>
+                <div class="" style={{backgroundColor: '#869CAA', color: '#0C4654', padding: '5px'}}>
+                    <img src={icon3} style={{width: '6%',marginRight: "0px", marginBottom: '9px', marginTop: '20px', marginLeft: '-1200px'}}/>
+                </div>
+                <div class="" style={{backgroundColor: '#869CAA', color: '#0C4654', padding: '5px', textAlign: 'center', marginTop: '-90px'}}>
+                    <p>
+                        <img src={icon4} style={{width: '2%', marginRight: '10px'}}/>
+                        otg.cups@gmail.com
+                    </p>
+                    <p>
+                        <img src={icon5} style={{width: '2%', marginRight: '10px'}}/>
+                        + 01 234 567 88
+                    </p>
+                </div>
+                <div class="" style={{backgroundColor: '#869CAA', color: '#0C4654', padding: '5px', textAlign: 'right', marginTop: '-70px', marginRight: '80px'}}>
+                    <h6 class="text-uppercase fw-bold mb-4">© 2023 Copyright: On The Go</h6>
+                </div>
+            </footer>
 
         </div>
     )

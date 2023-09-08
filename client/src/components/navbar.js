@@ -13,8 +13,8 @@ function BasicNavbar() {
             <Container style={{textAlign: 'left'}}>
                 <Navbar.Brand href="/"><img src={icon3} style={{width: '17%',marginRight: "-50px"}}/></Navbar.Brand>
                 <Nav style={{marginRight: "346px"}}>
-                    <Nav.Link href="/product" style={{fontSize: '17pt', color: '#CABCB1', fontWeight: 'bold'}}>Product</Nav.Link>
-                    <Nav.Link href="/inventory" style={{fontSize: '17pt', color: '#CABCB1', fontWeight: 'bold'}}>Inventory</Nav.Link>
+                    <Nav.Link href="/product" style={{fontSize: '17pt', color: '#CABCB1', fontWeight: 'bold', marginRight: '20px'}}>Products</Nav.Link>
+                    <Nav.Link href="/inventory" style={{fontSize: '17pt', color: '#CABCB1', fontWeight: 'bold', marginRight: '20px'}}>Inventory</Nav.Link>
                     <Nav.Link href="/order" style={{fontSize: '17pt', color: '#CABCB1', fontWeight: 'bold'}}>Orders</Nav.Link>
                 </Nav>
                 <Navbar.Brand href="/cart" style={{marginRight: "50px"}}><img src={icon} style={{width: '120%'}}/></Navbar.Brand>

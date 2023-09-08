@@ -24,8 +24,49 @@
     <a href="https://github.com/DupieM/DuPlessisMarine_221326_Final_Project/issues">Request Feature</a>
 </p>
 
+<!-- TABLE OF CONTENTS -->
+
+## Table of Contents
+
+- [About the Project](#about-the-project)
+    - [Project Description](#project-description)
+    - [Built With](#built-with)
+- [Getting Started](#getting-started)
+    - [Prerequisites](#prerequisites)
+    - [How to install](#how-to-install)
+- [Features and Functionality](#features-and-functionality)
+- [Concept Process](#concept-process)
+    - [Ideation](#ideation)
+    - [Wireframes](#wireframes)
+- [Development Process](#development-process)
+    - [Implementation Process](#implementation-process)
+        - [Highlights](#highlights)
+        - [Challenges](#challenges)
+    - [Future Implementation](#peer-reviews)
+- [Final Outcome](#final-outcome)
+    - [Mockups](#mockups)
+    - [Video Demonstration](#video-demonstration)
+- [Conclusion](#conclusion)
+
+## About the Project
+
+<!--PROJECT DESCRIPTION-->
+### Project Description
 
 
+### Built With
+MERN - Mongodb, Express.js, React, Node.js</br>
+CSS - Cascading Style Sheet </br>
+GitHub - Internet hosting service for software development and version control using GIT </br>
+Visual Studio - Integranted Development Enviroment </br>
+
+## Getting Started
+
+
+### Prerequisites
+
+
+### Installation
 
 
 

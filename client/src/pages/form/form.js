@@ -44,81 +44,95 @@ function Form() {
 
       <br/>
 
-      <div style={{ border: "2px black solid", margin: 'auto', borderRadius: '5px', width: "50%" }} className="container">
+      <div style={{border: '3px solid #09333E', margin: 'auto', borderRadius: '5px', width: '450px', marginTop: '75px', marginBottom: '76px'}} className="container">
         <form onSubmit={addProduct}>
           <div className="form">
-            <h1 style={{ color: "black" }} >Products</h1>
+            <h1 style={{fontWeight: 'bold', color: '#5C3D4C', fontSize: '40pt'}}>Add Product</h1>
             <div >
-              <input style={style}
+              <input
                 type="text"
                 placeholder="Make"
                 onChange={(e => setProductMake(e.target.value))}
+                style={{marginRight: '14px', fontSize: '17pt', padding: '5px', borderRadius: '5px', border: 'none', color: '#09333E', backgroundColor: '#BDD4E2', marginBottom: '9px', width: '150px'}}
               />
-              <input style={style}
+              <input
                 type="text"
                 placeholder="Model"
                 onChange={(e => setProductModel(e.target.value))}
-              />
-              <input style={style}
+                style={{fontSize: '17pt', padding: '5px', borderRadius: '5px', border: 'none', color: '#09333E', backgroundColor: '#BDD4E2', marginBottom: '9px', width: '150px'}}
+              /><br/>
+              <input
                 type="number"
                 placeholder="Price"
                 onChange={(e => setProductPrice(e.target.value))}
+                style={{marginRight: '14px', fontSize: '17pt', padding: '5px', borderRadius: '5px', border: 'none', color: '#09333E', backgroundColor: '#BDD4E2', marginBottom: '9px', width: '150px'}}
               />
-              <input style={style}
+              <input
                 type="number"
                 placeholder="Quantity"
                 onChange={(e => setProductQuantity(e.target.value))}
-              />
-              <input style={style}
+                style={{fontSize: '17pt', padding: '5px', borderRadius: '5px', border: 'none', color: '#09333E', backgroundColor: '#BDD4E2', marginBottom: '9px', width: '150px'}}
+              /><br/>
+              <input
                   type="number"
                   placeholder="Capacity"
                   onChange={(e => setProductCapacity(e.target.value))}
+                  style={{marginRight: '14px', fontSize: '17pt', padding: '5px', borderRadius: '5px', border: 'none', color: '#09333E', backgroundColor: '#BDD4E2', marginBottom: '9px', width: '150px'}}
               />
-              <input style={style}
+              <input
                 type="text"
                 placeholder="Product Code"
                 onChange={(e => setProductProducode(e.target.value))}
-              />
-              <input style={style}
+                style={{fontSize: '17pt', padding: '5px', borderRadius: '5px', border: 'none', color: '#09333E', backgroundColor: '#BDD4E2', marginBottom: '9px', width: '150px'}}
+              /><br/>
+              <input
                 type="url"
                 placeholder="Image link"
                 onChange={(e => setProductImg(e.target.value))}
+                style={{marginRight: '14px', fontSize: '17pt', padding: '5px', borderRadius: '5px', border: 'none', color: '#09333E', backgroundColor: '#BDD4E2', marginBottom: '9px', width: '150px'}}
               />
-              <input style={style}
+              <input
                 type="text"
                 placeholder="Color 1"
                 onChange={(e => setProductColorimg1(e.target.value))}
-              />
-              <input style={style}
+                style={{fontSize: '17pt', padding: '5px', borderRadius: '5px', border: 'none', color: '#09333E', backgroundColor: '#BDD4E2', marginBottom: '9px', width: '150px'}}
+              /><br/>
+              <input
                 type="text"
                 placeholder="Color 2"
                 onChange={(e => setProductColorimg2(e.target.value))}
+                style={{marginRight: '14px', fontSize: '17pt', padding: '5px', borderRadius: '5px', border: 'none', color: '#09333E', backgroundColor: '#BDD4E2', marginBottom: '9px', width: '150px'}}
               />
-              <input style={style}
+              <input
                 type="text"
                 placeholder="Color 3"
                 onChange={(e => setProductColorimg3(e.target.value))}
-              />
-              <input style={style}
+                style={{fontSize: '17pt', padding: '5px', borderRadius: '5px', border: 'none', color: '#09333E', backgroundColor: '#BDD4E2', marginBottom: '9px', width: '150px'}}
+              /><br/>
+              <input
                 type="text"
                 placeholder="Color 4"
                 onChange={(e => setProductColorimg4(e.target.value))}
+                style={{marginRight: '14px', fontSize: '17pt', padding: '5px', borderRadius: '5px', border: 'none', color: '#09333E', backgroundColor: '#BDD4E2', marginBottom: '9px', width: '150px'}}
               />
-              <input style={style}
+              <input
                 type="text"
                 placeholder="Size"
                 onChange={(e => setProductSize(e.target.value))}
-              />
-              <input style={style}
+                style={{fontSize: '17pt', padding: '5px', borderRadius: '5px', border: 'none', color: '#09333E', backgroundColor: '#BDD4E2', marginBottom: '9px', width: '150px'}}
+              /><br/>
+              <input
                 type="text"
                 placeholder="Description"
                 onChange={(e => setProductDescription(e.target.value))}
+                style={{marginRight: '14px', fontSize: '17pt', padding: '5px', borderRadius: '5px', border: 'none', color: '#09333E', backgroundColor: '#BDD4E2', marginBottom: '9px', width: '150px'}}
               />
-              <input style={style}
+              <input
                 type="text"
                 placeholder="Care Instructions"
                 onChange={(e => setProductCareinstructions(e.target.value))}
-              />
+                style={{fontSize: '17pt', padding: '5px', borderRadius: '5px', border: 'none', color: '#09333E', backgroundColor: '#BDD4E2', marginBottom: '9px', width: '150px'}}
+              /><br/>
               <button type='submit' style={style}>Add Product</button>
             </div>
           </div>

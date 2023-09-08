@@ -3,16 +3,15 @@ const mongoose = require('mongoose')
 const OrderSchema = mongoose.Schema({
     number: {
         type: Number, 
-        required: false
+        required: true
     },
     username: {
         type: String,
         required: true,
-        ref: 'Clients'
     }, 
     order_number: { 
         type: Number, 
-        required: false
+        required: true
     },
     model: { 
         type: String, 
@@ -25,6 +24,10 @@ const OrderSchema = mongoose.Schema({
     price: { 
         type: Number, 
         required: false
+    },
+    cartItems: {
+        type: Object,
+        required: true
     }
 })
 
