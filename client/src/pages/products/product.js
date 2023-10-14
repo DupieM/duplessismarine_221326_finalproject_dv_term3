@@ -29,6 +29,19 @@ function Product() {
         window.location = "/single_product";
     };
 
+    // ???
+    const handleChange = () => {
+        var x = document.getElementById("myProd");
+        var y = document.getElementById("myProducts");
+        if (y.style.display === "none") {
+            x.style.display = "none";
+            y.style.display = "flex";
+        } else {
+            x.style.display = "flex";
+            y.style.display = "none";
+        }
+    }
+
     return (
         <div className="App2">
 
@@ -59,10 +72,10 @@ function Product() {
                   
                               console.log(arrayOfmakes);
 
-                              setProducts(arrayOfmakes);
+                              setProduct(arrayOfmakes);
                             })
                             .catch()  
-                        }}>
+                        }} onClick={handleChange}>
                             <option value=""  style={{cursor: 'pointer'}}>Choose make</option>
                             <option value="Bodum" style={{cursor: 'pointer'}}>Bodum</option>
                             <option value="Built" style={{cursor: 'pointer'}}>Built</option>
@@ -92,17 +105,17 @@ function Product() {
                               let arrayOfprices = [];
                   
                               for(let i=0; i < res.data.length;i++) {
-                                  if (res.data[i].price == e.target.value) {
+                                  if (res.data[i].price >= e.target.value) {
                                       arrayOfprices.push(res.data[i])
                                   }
                               }
                   
                               console.log(arrayOfprices);
 
-                              setProducts(arrayOfprices);
+                              setProduct(arrayOfprices);
                             })
                             .catch()  
-                        }}>
+                        }} onClick={handleChange}>
                             <option value="" style={{cursor: 'pointer'}}>Choose price</option>
                             <option value="200" style={{cursor: 'pointer'}}>R200</option>
                             <option value="300" style={{cursor: 'pointer'}}>R300</option>
@@ -129,10 +142,10 @@ function Product() {
                   
                               console.log(arrayOfsizes);
 
-                              setProducts(arrayOfsizes);
+                              setProduct(arrayOfsizes);
                             })
                             .catch()  
-                        }}>
+                        }} onClick={handleChange}>
                             <option value="" style={{cursor: 'pointer'}}>Choose Size</option>
                             <option value="small" style={{cursor: 'pointer'}}>Small</option>
                             <option value="medium" style={{cursor: 'pointer'}}>Medium</option>
@@ -157,10 +170,10 @@ function Product() {
                   
                               console.log(arrayOfsizes);
 
-                              setProducts(arrayOfsizes);
+                              setProduct(arrayOfsizes);
                             })
                             .catch()  
-                        }}>
+                        }}  onClick={handleChange}>
                             <option value="" style={{cursor: 'pointer'}}>Choose</option>
                             <option value="Mint" style={{cursor: 'pointer'}}>Mint</option>
                             <option value="Green" style={{cursor: 'pointer'}}>Green</option>
@@ -175,8 +188,27 @@ function Product() {
             </Accordion>
 
             <Container style={{marginLeft: '216px', marginTop: '-270px', marginBottom: '48px'}}>
-                <Row>
+                <Row id="myProd">
                     {products.map(product => {
+                        return (
+                            <Col key={product._id}>
+                                <Card style={{width: '270px', height: '430px', marginLeft: '28px', marginBottom: '30px', backgroundColor: '#869CAA', textAlign: 'center', padding: '9px'}}>
+                                    <img src={product.img}  alt="cup" style={{width: '250px'}}/>
+                                        <Card.Body style={{paddingLeft: "0px", paddingRight: "0px"}}>
+                                            <Card.Title style={{fontSize: '17pt', marginTop: '1px', color: '#0C4654'}}>{product.model}</Card.Title>
+                                            <Card.Text style={{fontSize: '17pt', marginTop: '10px', color: '#0C4654'}}>R {product.price}</Card.Text>
+                                        </Card.Body>
+                                        <button style={{marginBottom: '10px'}} onClick={() => handleSingle(product._id)}>
+                                            View
+                                        </button>
+                                </Card>
+                                
+                            </Col>
+                        )
+                    })}
+                </Row>
+                <Row id="myProducts">
+                    {product.map(product => {
                         return (
                             <Col key={product._id}>
                                 <Card style={{width: '270px', height: '430px', marginLeft: '28px', marginBottom: '30px', backgroundColor: '#869CAA', textAlign: 'center', padding: '9px'}}>
