@@ -4,7 +4,7 @@ const OrderSchema = require('../models/order')
 
 const router = express();
 
-//Get All
+//Get Al
 router.get('/api/orders/', async (req, res) => {
     const findOrder = await OrderSchema.find();
     res.json(findOrder)
