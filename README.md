@@ -1,6 +1,3 @@
-
-<h5 align="center" style="padding:0;margin:0;">Mariné du Plessis</h5>
-
 <p align="center">
 
   <a href="https://github.com/DupieM/DuPlessisMarine_221326_Final_Project">
@@ -10,6 +7,8 @@
 
 <h3 align="center">On The Go</h3>
 <h4 align="center">This is an e-commerce website where MongoDB was used as a databse to handle orders, users and products.</h4>
+
+<h5 align="center" style="padding:0;margin:0;">Mariné du Plessis</h5>
 
 <p align="center">
    <br />
@@ -53,12 +52,11 @@ This application will consist of complex front-end and back-end requirements.
 My mock ecommerce webstore will sell travel mugs.
 
 ### Built With
-MERN - Mongodb, Express.js, React, Node.js</br>
-* <a href=""></a>
-* <a href=""></a>
-* <a href=""></a>
-* <a href=""></a>
-* <a href="https://jwt.io/">[![jwt][JWT]][jwt-url]</a>
+* <a href="https://www.mongodb.com/">![Static Badge](https://img.shields.io/badge/mongodb-url?style=for-the-badge&logo=mongodb&logoColor=white&color=darkgreen)</a>
+* <a href="https://expressjs.com/">![Static Badge](https://img.shields.io/badge/exspress.js-url?style=for-the-badge&logo=express&logoColor=white&color=grey)</a>
+* <a href="https://react.dev/"> ![Static Badge](https://img.shields.io/badge/react-url?style=for-the-badge&logo=react&color=black) </a>
+* <a href="https://nodejs.org/en">![Static Badge](https://img.shields.io/badge/node.js-url?style=for-the-badge&logo=node.js&logoColor=green&color=grey)</a>
+* <a href="https://jwt.io/">![Static Badge](https://img.shields.io/badge/jwt-url?style=for-the-badge&logo=JSON%20Web%20Tokens&logoColor=white&color=black)</a>
 * <a href="https://github.com/"> ![Static Badge](https://img.shields.io/badge/Github-url?style=for-the-badge&logo=github&color=purple)</a>
 * <a href="https://code.visualstudio.com/"> ![Static Badge](https://img.shields.io/badge/visual%20studio-url?style=for-the-badge&logo=visual%20studio&logoColor=blue&color=black&link=https%3A%2F%2Fcode.visualstudio.com%2F)</a>
 
@@ -102,54 +100,54 @@ To create the React app do the following steps:
 I needed to allow for a user to sign up and then after the first use to log in to the website.
 JSON Web Tokens is used to authenticate users. Different user profiles will exist.
 
-<img src="" width="600px">
+<!-- <img src="" width="600px"> -->
 
 ### Landing Page
 
 On this page all the new and discounted products will be displayed. 
 A slider is showcased with product information.
 
-<img src="" width="600px">
+<!-- <img src="" width="600px"> -->
 
 ### Product Page
 
 On this page all available products need to be displayed.
 Different categories will be displayed whereby the user will be able to select certain products to be displayed.
 
-<img src="" width="600px">
+<!-- <img src="" width="600px"> -->
 
 ### Individual Item Page
 
 On this page all the information of a selected product from the products page will be displayed.
 Here the user will be ably to add the quantity he wants of the product and then add it to the cart.
 
-<img src="" width="600px">
+<!-- <img src="" width="600px"> -->
 
 ### Inventory Page
 
 When the administrator logs in the inventory page can be selected where products can be updated, added and deleted.
 
-<img src="" width="600px">
+<!-- <img src="" width="600px"> -->
 
 ### Order Page
 
 When the administrator logs in the order page can be selected, from this page an order can be deleted.
 
-<img src="" width="600px">
+<!-- <img src="" width="600px"> -->
 
 ### Cart Page
 
 On this page the products added to the cart will be displayed with the total amount of the order.
 From here the user will be able to checkout.
 
-<img src="" width="600px">
+<!-- <img src="" width="600px"> -->
 
 ### Checkout Page
 
 On this page the order details will be displayed and the user will be able to add the shipping address and payment details.
 When the user selects checkout an order will be created.
 
-<img src="" width="600px">
+<!-- <img src="" width="600px"> -->
 
 
 ## Development Process
@@ -161,7 +159,7 @@ I also used icons and a logo design resembling a minimalistic and clean design.
 
 ### Use Case Diagram
 
-ffdfd
+AS seen below is my `Use Case Diagram`. 
 ![image4](Mockups&Wireframes/Use_case_diagram.jpg)
 
 ### Implementation Process
