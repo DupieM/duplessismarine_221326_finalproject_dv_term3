@@ -1,22 +1,17 @@
-<!-- Name, Number, Subject and Term -->
-<h5 align="center" style="padding:0;margin:0;">Mariné du Plessis</h5>
-<h5 align="center" style="padding:0;margin:0;">Student Number: 221326</h5>
-<h6 align="center">DV200 | Term 3</h6>
 
-</br>
+<h5 align="center" style="padding:0;margin:0;">Mariné du Plessis</h5>
 
 <p align="center">
 
   <a href="https://github.com/DupieM/DuPlessisMarine_221326_Final_Project">
     <img src="client/src/pages/cart/logo1.png" width="200px">
   </a>
+</p>
 
 <h3 align="center">On The Go</h3>
+<h4 align="center">This is an e-commerce website where MongoDB was used as a databse to handle orders, users and products.</h4>
 
-  <p align="center">
-    This is an e-commerce website where MongoDB was used as a databse to handle orders, users and products.<br>
-
-   <br />
+<p align="center">
    <br />
     ·
     <a href="https://github.com/DupieM/DuPlessisMarine_221326_Final_Project/issues">Report Bug</a>
@@ -28,6 +23,7 @@
 
 ## Table of Contents
 
+- [Mockup](#mockup)
 - [About the Project](#about-the-project)
     - [Project Description](#project-description)
     - [Built With](#built-with)
@@ -35,10 +31,9 @@
     - [Prerequisites](#prerequisites)
     - [How to install](#how-to-install)
 - [Features and Functionality](#features-and-functionality)
-- [Concept Process](#concept-process)
-    - [Ideation](#ideation)
-    - [Wireframes](#wireframes)
 - [Development Process](#development-process)
+    - [Theme of Website Application](#theme-of-website-application)
+    - [Use Case Diagram](#use-case-diagram)
     - [Implementation Process](#implementation-process)
         - [Highlights](#highlights)
         - [Challenges](#challenges)
@@ -48,9 +43,10 @@
     - [Video Demonstration](#video-demonstration)
 - [Conclusion](#conclusion)
 
-## About the Project
+# Mockup
+![image1](Mockups&Wireframes/mockups/Mockup7.jpg)
 
-<!--PROJECT DESCRIPTION-->
+## About the Project
 ### Project Description
 This term we were tasked to create an Ecommerce web application by focusing on the technologies of the MERN stack.
 This application will consist of complex front-end and back-end requirements.
@@ -58,10 +54,14 @@ My mock ecommerce webstore will sell travel mugs.
 
 ### Built With
 MERN - Mongodb, Express.js, React, Node.js</br>
-CSS - Cascading Style Sheet </br>
-JWT Authentication - JSON Web Token </br>
-GitHub - Internet hosting service for software development and version control using GIT </br>
-Visual Studio - Integrated Development Enviroment </br>
+* <a href=""></a>
+* <a href=""></a>
+* <a href=""></a>
+* <a href=""></a>
+* <a href="https://jwt.io/">[![jwt][JWT]][jwt-url]</a>
+* <a href="https://github.com/"> ![Static Badge](https://img.shields.io/badge/Github-url?style=for-the-badge&logo=github&color=purple)</a>
+* <a href="https://code.visualstudio.com/"> ![Static Badge](https://img.shields.io/badge/visual%20studio-url?style=for-the-badge&logo=visual%20studio&logoColor=blue&color=black&link=https%3A%2F%2Fcode.visualstudio.com%2F)</a>
+
 
 ## Getting Started
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
@@ -98,55 +98,71 @@ To create the React app do the following steps:
 
 ## Features and Functionality
 ### Log In/Sign Up Page
-    I needed to allow for a user to sign up and then after the first use to log in to the website.
-    JSON Web Tokens is used to authenticate users. Different user profiles will exist.
+
+I needed to allow for a user to sign up and then after the first use to log in to the website.
+JSON Web Tokens is used to authenticate users. Different user profiles will exist.
+
+<img src="" width="600px">
 
 ### Landing Page
-    On this page all the new and discounted products will be displayed. 
-    A slider is showcased with product information.
+
+On this page all the new and discounted products will be displayed. 
+A slider is showcased with product information.
+
+<img src="" width="600px">
 
 ### Product Page
-    On this page all available products need to be displayed.
-    Different categories will be displayed whereby the user will be able to select certain products to be displayed. 
+
+On this page all available products need to be displayed.
+Different categories will be displayed whereby the user will be able to select certain products to be displayed.
+
+<img src="" width="600px">
 
 ### Individual Item Page
-    On this page all the information of a selected product from the products page will be displayed.
-    Here the user will be ably to add the quantity he wants of the product and then add it to the cart.
+
+On this page all the information of a selected product from the products page will be displayed.
+Here the user will be ably to add the quantity he wants of the product and then add it to the cart.
+
+<img src="" width="600px">
 
 ### Inventory Page
-    When the administrator logs in the inventory page can be selected where products can be updated, added and deleted.
+
+When the administrator logs in the inventory page can be selected where products can be updated, added and deleted.
+
+<img src="" width="600px">
 
 ### Order Page
-    When the administrator logs in the order page can be selected, from this page an order can be deleted.
+
+When the administrator logs in the order page can be selected, from this page an order can be deleted.
+
+<img src="" width="600px">
 
 ### Cart Page
-    On this page the products added to the cart will be displayed with the total amount of the order.
-    From here the user will be able to checkout.
+
+On this page the products added to the cart will be displayed with the total amount of the order.
+From here the user will be able to checkout.
+
+<img src="" width="600px">
 
 ### Checkout Page
-    On this page the order details will be displayed and the user will be able to add the shipping address and payment details.
-    When the user selects checkout an order will be created.
 
-## Concept Process
+On this page the order details will be displayed and the user will be able to add the shipping address and payment details.
+When the user selects checkout an order will be created.
+
+<img src="" width="600px">
+
+
+## Development Process
+### Theme of Web Application
+
 I went with a simple and minimalistic UI design that fits an ecommerce website for travel mugs. 
 I went with soft colours and a clean design as travelers want to buy something quickly and easily. 
 I also used icons and a logo design resembling a minimalistic and clean design.
 
-### Wireframes
+### Use Case Diagram
 
-![image1](Mockups&Wireframes/wireframes/LogIn.jpg)
-![image2](Mockups&Wireframes/wireframes/SignUp.jpg)
-![image3](Mockups&Wireframes/wireframes/Landing.png)
-![image4](Mockups&Wireframes/wireframes/Productpage.png)
-![image5](Mockups&Wireframes/wireframes/SingleProductpage.png)
-![image6](Mockups&Wireframes/wireframes/Cart.png)
-![image7](Mockups&Wireframes/wireframes/Checkout.jpg)
-![image8](Mockups&Wireframes/wireframes/OrderPage.jpg)
-
-
-## Development Process
-
-The `Development Process` is the technical implementations and functionality done for the website.
+ffdfd
+![image4](Mockups&Wireframes/Use_case_diagram.jpg)
 
 ### Implementation Process
 #### Highlights
@@ -167,25 +183,16 @@ Adding a number to the cart icon in the header when there is something in the ca
 To add more comments in my code to explain functionality.
 
 ## Final Outcome
-
-### Mockups
-
-![image1](Mockups&Wireframes/mockups/Mockup3.jpg)
-![image2](Mockups&Wireframes/mockups/Mockup5.jpg)
-![image3](Mockups&Wireframes/mockups/Mockup7.jpg)
-![image4](Mockups&Wireframes/mockups/Mockup6.jpg)
-![image5](Mockups&Wireframes/mockups/Mockup2.jpg)
-![image6](Mockups&Wireframes/mockups/Mockup1.jpg)
-![image7](Mockups&Wireframes/mockups/Mockup4.jpg)
-
-<br>
-
 ### Video Demonstration
 
-[View Demonstration](Mockups&Wireframes/DuPlessisMariné_221326_DV200_Demonstration_Video.mp4)
+[View Demonstration]()
 
 
-## Contact
-**Mariné du Plessis** - [gmail](221326@virtualwindow.co.za)
-- **Project Link** - https://github.com/DupieM/duplessismarine_221326_finalproject_dv_term3
+## Conclusion
+### License
+Rights reserved © 2023
+
+### Author
+**Mariné du Plessis** </br>
+[gmail](221326@virtualwindow.co.za)
 
