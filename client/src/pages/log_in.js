@@ -21,7 +21,7 @@ function LogIn() {
         e.preventDefault();
     
         try {
-            const payload = {
+            let payload = {
                 username: username,
                 password: password
             }

@@ -30,11 +30,11 @@ router.post("/api/clients", async (req, res) => {
 router.post('/api/client', async (req, res) => {
     try {
         const { error } = validate(req.body);
-        if (error)
+        if (error){
             return res.status(400).send({ message: error });
-
+        
         // Hash the password before saving (assuming there is a password field)
-        if (req.body.password) {
+        } else if (req.body.password) {
             const salt = await bcrypt.genSalt(Number(process.env.SALT));
             req.body.password = await bcrypt.hash(req.body.password, salt);
         }
