@@ -6,7 +6,7 @@
 </p>
 
 <h3 align="center">On The Go</h3>
-<h4 align="center">This is an e-commerce website where MongoDB was used as a databse to handle orders, users and products.</h4>
+<h4 align="center">This is an e-commerce website where MongoDB was used as a database to handle orders, users and products.</h4>
 
 <h5 align="center" style="padding:0;margin:0;">Mariné du Plessis</h5>
 
@@ -31,7 +31,7 @@
     - [How to install](#how-to-install)
 - [Features and Functionality](#features-and-functionality)
 - [Development Process](#development-process)
-    - [Theme of Website Application](#theme-of-website-application)
+    - [Website Application Theme](#website-application-theme)
     - [Use Case Diagram](#use-case-diagram)
     - [Implementation Process](#implementation-process)
         - [Highlights](#highlights)
@@ -49,13 +49,15 @@
 ### Project Description
 This term we were tasked to create an Ecommerce web application by focusing on the technologies of the MERN stack.
 This application will consist of complex front-end and back-end requirements.
-My mock ecommerce webstore will sell travel mugs.
+The mock ecommerce webstore will sell travel mugs.
 
 ### Built With
 * <a href="https://www.mongodb.com/">![Static Badge](https://img.shields.io/badge/mongodb-url?style=for-the-badge&logo=mongodb&logoColor=white&color=darkgreen)</a>
 * <a href="https://expressjs.com/">![Static Badge](https://img.shields.io/badge/exspress.js-url?style=for-the-badge&logo=express&logoColor=white&color=grey)</a>
 * <a href="https://react.dev/"> ![Static Badge](https://img.shields.io/badge/react-url?style=for-the-badge&logo=react&color=black) </a>
 * <a href="https://nodejs.org/en">![Static Badge](https://img.shields.io/badge/node.js-url?style=for-the-badge&logo=node.js&logoColor=green&color=grey)</a>
+* <a href="https://www.w3schools.com/css/">![Static Badge](https://img.shields.io/badge/Css-url?style=for-the-badge&logo=Cascading%20Style%20Sheets&color=blue)</a>
+* <a href="https://www.w3schools.com/js/">![Static Badge](https://img.shields.io/badge/Javascript-url?style=for-the-badge&logo=JS&color=yellow)</a>
 * <a href="https://jwt.io/">![Static Badge](https://img.shields.io/badge/jwt-url?style=for-the-badge&logo=JSON%20Web%20Tokens&logoColor=white&color=black)</a>
 * <a href="https://github.com/"> ![Static Badge](https://img.shields.io/badge/Github-url?style=for-the-badge&logo=github&color=purple)</a>
 * <a href="https://code.visualstudio.com/"> ![Static Badge](https://img.shields.io/badge/visual%20studio-url?style=for-the-badge&logo=visual%20studio&logoColor=blue&color=black&link=https%3A%2F%2Fcode.visualstudio.com%2F)</a>
@@ -79,8 +81,8 @@ Clone the project repository as follow:
 To create the React app do the following steps:
 
 1.  Go to Visual Studio code  </br>
-    Open your Visual Studio code then click on File and then click on open folder
-    Then navigate to where you created your folder and open it
+    Open your Visual Studio code then click on File and then click on open folder.
+    Then navigate to where you created your folder and open it.
 
 2.  Start terminal </br>
     Go to 'Terminal' then click on new terminal.
@@ -88,11 +90,11 @@ To create the React app do the following steps:
 
 3.  Start React Client </br>
     On one side of the terminal type 'cd ./client/' to navigate into that file.
-    After that type 'npm start' to start the react app
+    After that type 'npm start' to start the react app.
 
 4.  Start Server </br>
     On the other side of the terminal type 'cd ./server/' to navigate into that file.
-    After that type 'npm run dev' to start the server
+    After that type 'npm run dev' to start the server.
 
 ## Features and Functionality
 ### Log In/Sign Up Page
@@ -100,58 +102,59 @@ To create the React app do the following steps:
 I needed to allow for a user to sign up and then after the first use to log in to the website.
 JSON Web Tokens is used to authenticate users. Different user profiles will exist.
 
-<!-- <img src="" width="600px"> -->
+<img src="Mockups&Wireframes/final_images/Log_In.JPG" width="1000px">
+<img src="Mockups&Wireframes/final_images/Sign_Up.JPG" width="1000px">
 
 ### Landing Page
 
 On this page all the new and discounted products will be displayed. 
 A slider is showcased with product information.
 
-<!-- <img src="" width="600px"> -->
+<img src="Mockups&Wireframes/final_images/Landing_page.jpg" width="1000px">
 
 ### Product Page
 
 On this page all available products need to be displayed.
-Different categories will be displayed whereby the user will be able to select certain products to be displayed.
+Different categories will be displayed whereby the user will be able to select a category of products to be displayed.
 
-<!-- <img src="" width="600px"> -->
+<img src="Mockups&Wireframes/final_images/product-page.jpg" width="1000px">
 
 ### Individual Item Page
 
-On this page all the information of a selected product from the products page will be displayed.
+On this page all the information of a selected product from the Product page will be displayed.
 Here the user will be ably to add the quantity he wants of the product and then add it to the cart.
 
-<!-- <img src="" width="600px"> -->
+<img src="Mockups&Wireframes/final_images/single_product.jpg" width="1000px">
 
 ### Inventory Page
 
-When the administrator logs in the inventory page can be selected where products can be updated, added and deleted.
+When the administrator logs in, the Inventory page can be selected where products can be updated, added and deleted.
 
-<!-- <img src="" width="600px"> -->
+<img src="Mockups&Wireframes/final_images/inventory_page.jpg" width="1000px">
 
 ### Order Page
 
-When the administrator logs in the order page can be selected, from this page an order can be deleted.
+When the administrator logs in, the Order page can be selected, from this page an order can be deleted (dispatched).
 
-<!-- <img src="" width="600px"> -->
+<img src="Mockups&Wireframes/final_images/Order_page.jpg" width="1000px">
 
 ### Cart Page
 
 On this page the products added to the cart will be displayed with the total amount of the order.
 From here the user will be able to checkout.
 
-<!-- <img src="" width="600px"> -->
+<img src="Mockups&Wireframes/final_images/cart_page.jpg" width="1000px">
 
 ### Checkout Page
 
 On this page the order details will be displayed and the user will be able to add the shipping address and payment details.
 When the user selects checkout an order will be created.
 
-<!-- <img src="" width="600px"> -->
+<img src="Mockups&Wireframes/final_images/checkout_page.jpg" width="1000px">
 
 
 ## Development Process
-### Theme of Web Application
+### Web Application Theme
 
 I went with a simple and minimalistic UI design that fits an ecommerce website for travel mugs. 
 I went with soft colours and a clean design as travelers want to buy something quickly and easily. 
@@ -159,7 +162,7 @@ I also used icons and a logo design resembling a minimalistic and clean design.
 
 ### Use Case Diagram
 
-AS seen below is my `Use Case Diagram`. 
+As seen below is the `Use Case Diagram`. This diagram shows the user or administrator can do, it also shows how the use cases are connected.
 ![image4](Mockups&Wireframes/Use_case_diagram.jpg)
 
 ### Implementation Process
@@ -171,19 +174,18 @@ Interfacing to the Mongo database and seeing data CRUD at work between the appli
 #### Challenges
 
 Some challenges that I faced was the JWT Authentication. I kept on getting an authorisation error that I was not able to solve. 
-Another challenge was to display data based on a selection like the categories on the product page.
+Another challenge was to display data based on a selection like the categories on the product page. The show and hide function was used to solve this.
 
 ### Future Implementation
 
 Adding success and failure messages right through the application.
-Enabling the JWT Authentication.
 Adding a number to the cart icon in the header when there is something in the cart already.
 To add more comments in my code to explain functionality.
 
 ## Final Outcome
 ### Video Demonstration
 
-[View Demonstration]()
+[Demonstration Video - On The Go](https://drive.google.com/file/d/1fTv_c5yguiaT7KDH0SOvWa9rXWXlPwFN/view?usp=sharing)
 
 
 ## Conclusion
